@@ -1,14 +1,13 @@
 <?php
 
+use App\Http\Controllers\Front\WelcomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminLoginController;
 use App\Http\Controllers\Admin\AdminProfileController;
 
-
-Route::get('/', function (){
-    return view('welcome');
-});
+/*front*/
+Route::get('/', [WelcomeController::class, 'index'])->name('welcome');
 
 
 /*Admin*/
