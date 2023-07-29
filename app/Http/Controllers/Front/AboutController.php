@@ -4,11 +4,13 @@ namespace App\Http\Controllers\Front;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Page;
 
-class WelcomeController extends Controller
+class AboutController extends Controller
 {
     public function index()
     {
-        return view('welcome.home');
+        
+        return view('front.about');
     }
 }
