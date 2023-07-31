@@ -10,11 +10,16 @@ use App\Http\Controllers\Admin\AdminTestimonialController;
 use App\Http\Controllers\Admin\AdminPostController;
 use App\Http\Controllers\Admin\AdminPhotoController;
 use App\Http\Controllers\Admin\AdminVideoController;
+use App\Http\Controllers\Admin\AdminFaqController;
+use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\BlogController;
 use App\Http\Controllers\Front\PhotoController;
 use App\Http\Controllers\Front\VideoController;
+use App\Http\Controllers\Front\FaqController;
+use App\Http\Controllers\Front\TermsController;
+use App\Http\Controllers\Front\PrivacyController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -23,6 +28,9 @@ Route::get('/blog', [BlogController::class, 'index'])->name('blog');
 Route::get('/post/{id}', [BlogController::class, 'single_post'])->name('post');
 Route::get('/photo-gallery', [PhotoController::class, 'index'])->name('photo_gallery');
 Route::get('/video-gallery', [VideoController::class, 'index'])->name('video_gallery');
+Route::get('/faq', [FaqController::class, 'index'])->name('faq');
+Route::get('/terms-and-conditions', [TermsController::class, 'index'])->name('terms');
+Route::get('/privacy-policy', [PrivacyController::class, 'index'])->name('privacy');
 /*Admin*/
 Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home');
 Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('admin_login');
@@ -75,3 +83,19 @@ Route::post('/admin/video/store', [AdminVideoController::class, 'store'])->name(
 Route::get('/admin/video/edit/{id}', [AdminVideoController::class, 'edit'])->name('admin_video_edit');
 Route::post('/admin/video/update/{id}', [AdminVideoController::class, 'update'])->name('admin_video_update');
 Route::get('/admin/video/delete/{id}', [AdminVideoController::class, 'delete'])->name('admin_video_delete');
+
+Route::get('/admin/faq/view', [AdminFaqController::class, 'index'])->name('admin_faq_view');
+Route::get('/admin/faq/add', [AdminFaqController::class, 'add'])->name('admin_faq_add');
+Route::post('/admin/faq/store', [AdminFaqController::class, 'store'])->name('admin_faq_store');
+Route::get('/admin/faq/edit/{id}', [AdminFaqController::class, 'edit'])->name('admin_faq_edit');
+Route::post('/admin/faq/update/{id}', [AdminFaqController::class, 'update'])->name('admin_faq_update');
+Route::get('/admin/faq/delete/{id}', [AdminFaqController::class, 'delete'])->name('admin_faq_delete');
+
+Route::get('/admin/page/about', [AdminPageController::class, 'about'])->name('admin_page_about');
+Route::post('/admin/page/about/update', [AdminPageController::class, 'about_update'])->name('admin_page_about_update');
+
+Route::get('/admin/page/terms', [AdminPageController::class, 'terms'])->name('admin_page_terms');
+Route::post('/admin/page/terms/update', [AdminPageController::class, 'terms_update'])->name('admin_page_terms_update');
+
+Route::get('/admin/page/privacy', [AdminPageController::class, 'privacy'])->name('admin_page_privacy');
+Route::post('/admin/page/privacy/update', [AdminPageController::class, 'privacy_update'])->name('admin_page_privacy_update');
