@@ -34,6 +34,21 @@ class AdminProfileController extends Controller
 
         }
 
+        if($request->hasFile('photo')) {
+            $request->validate([
+                'photo' => 'image|mimes:jpg,jpeg,png,gif'
+            ]);
+
+            unlink('uploads/'.$admin_data->photo);
+
+            $ext = $request->file('photo')->extension();
+            $final_name = 'admin'.$admin_data->id.'.'.$ext;
+
+            $request->file('photo')->move('uploads/',$final_name);
+
+            $admin_data->photo = $final_name;
+        }
+
         $admin_data->name = $request->name;
         $admin_data->email = $request->email;
         $admin_data->update();

@@ -108,7 +108,7 @@
                                     <a href="{{ route('blog') }}" class="nav-link">Blog</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Contact</a>
+                                    <a href="{{ route('contact') }}" class="nav-link">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -131,7 +131,9 @@
                                 <li><a href="rooms.html">Rooms & Suites</a></li>
                                 <li><a href="photo-gallery.html">Photo Gallery</a></li>
                                 <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                @if($global_page_data->contact_status == 1)
+                                <li><a href="{{ route('contact') }}">{{ $global_page_data->contact_heading }}</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
