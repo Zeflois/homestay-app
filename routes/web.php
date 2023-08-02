@@ -108,3 +108,12 @@ Route::post('/admin/page/contact/update', [AdminPageController::class, 'contact_
 
 Route::get('/admin/page/photo-gallery', [AdminPageController::class, 'photo_gallery'])->name('admin_page_photo_gallery');
 Route::post('/admin/page/photo-gallery/update', [AdminPageController::class, 'photo_gallery_update'])->name('admin_page_photo_gallery_update');
+
+Route::get('/admin/page/video-gallery', [AdminPageController::class, 'video_gallery'])->name('admin_page_video_gallery');
+Route::post('/admin/page/video-gallery/update', [AdminPageController::class, 'video_gallery_update'])->name('admin_page_video_gallery_update');
+
+Route::get('/admin/page/faq', [AdminPageController::class, 'faq'])->name('admin_page_faq');
+Route::post('/admin/page/faq/update', [AdminPageController::class, 'faq_update'])->name('admin_page_faq_update');
+
+Route::get('/admin/page/blog', [AdminPageController::class, 'blog'])->name('admin_page_blog');
+Route::post('/admin/page/blog/update', [AdminPageController::class, 'blog_update'])->name('admin_page_blog_update');
