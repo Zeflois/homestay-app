@@ -12,6 +12,9 @@ use App\Http\Controllers\Admin\AdminPhotoController;
 use App\Http\Controllers\Admin\AdminVideoController;
 use App\Http\Controllers\Admin\AdminFaqController;
 use App\Http\Controllers\Admin\AdminPageController;
+use App\Http\Controllers\Admin\AdminSubscriberController;
+use App\Http\Controllers\Admin\AdminAmenityController;
+use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\BlogController;
@@ -21,6 +24,8 @@ use App\Http\Controllers\Front\FaqController;
 use App\Http\Controllers\Front\TermsController;
 use App\Http\Controllers\Front\PrivacyController;
 use App\Http\Controllers\Front\ContactController;
+use App\Http\Controllers\Front\SubscriberController;
+use App\Http\Controllers\Front\RoomController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -34,6 +39,10 @@ Route::get('/terms-and-conditions', [TermsController::class, 'index'])->name('te
 Route::get('/privacy-policy', [PrivacyController::class, 'index'])->name('privacy');
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/contact/send-email', [ContactController::class, 'send_email'])->name('contact_send_email');
+Route::post('/subscriber/send-email', [SubscriberController::class, 'send_email'])->name('subscriber_send_email');
+Route::get('/subscriber/verify/{email}/{token}', [SubscriberController::class, 'verify'])->name('subscriber_verify');
+Route::get('/room', [RoomController::class, 'index'])->name('room');
+Route::get('/room/{id}', [RoomController::class, 'single_room'])->name('room_detail');
 /*Admin*/
 Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home');
 Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('admin_login');
@@ -117,3 +126,43 @@ Route::post('/admin/page/faq/update', [AdminPageController::class, 'faq_update']
 
 Route::get('/admin/page/blog', [AdminPageController::class, 'blog'])->name('admin_page_blog');
 Route::post('/admin/page/blog/update', [AdminPageController::class, 'blog_update'])->name('admin_page_blog_update');
+
+Route::get('/admin/page/room', [AdminPageController::class, 'room'])->name('admin_page_room');
+Route::post('/admin/page/room/update', [AdminPageController::class, 'room_update'])->name('admin_page_room_update');
+
+Route::get('/admin/page/cart', [AdminPageController::class, 'cart'])->name('admin_page_cart');
+Route::post('/admin/page/cart/update', [AdminPageController::class, 'cart_update'])->name('admin_page_cart_update');
+
+Route::get('/admin/page/checkout', [AdminPageController::class, 'checkout'])->name('admin_page_checkout');
+Route::post('/admin/page/checkout/update', [AdminPageController::class, 'checkout_update'])->name('admin_page_checkout_update');
+
+Route::get('/admin/page/payment', [AdminPageController::class, 'payment'])->name('admin_page_payment');
+Route::post('/admin/page/payment/update', [AdminPageController::class, 'payment_update'])->name('admin_page_payment_update');
+
+Route::get('/admin/page/signup', [AdminPageController::class, 'signup'])->name('admin_page_signup');
+Route::post('/admin/page/signup/update', [AdminPageController::class, 'signup_update'])->name('admin_page_signup_update');
+
+Route::get('/admin/page/signin', [AdminPageController::class, 'signin'])->name('admin_page_signin');
+Route::post('/admin/page/signin/update', [AdminPageController::class, 'signin_update'])->name('admin_page_signin_update');
+
+Route::get('/admin/subscriber/show', [AdminSubscriberController::class, 'show'])->name('admin_subscriber_show');
+Route::get('/admin/subscriber/send-email', [AdminSubscriberController::class, 'send_email'])->name('admin_subscriber_send_email');
+Route::post('/admin/subscriber/send-email-submit', [AdminSubscriberController::class, 'send_email_submit'])->name('admin_subscriber_send_email_submit');
+
+Route::get('/admin/amenity/view', [AdminAmenityController::class, 'index'])->name('admin_amenity_view');
+Route::get('/admin/amenity/add', [AdminAmenityController::class, 'add'])->name('admin_amenity_add');
+Route::post('/admin/amenity/store', [AdminAmenityController::class, 'store'])->name('admin_amenity_store');
+Route::get('/admin/amenity/edit/{id}', [AdminAmenityController::class, 'edit'])->name('admin_amenity_edit');
+Route::post('/admin/amenity/update/{id}', [AdminAmenityController::class, 'update'])->name('admin_amenity_update');
+Route::get('/admin/amenity/delete/{id}', [AdminAmenityController::class, 'delete'])->name('admin_amenity_delete');
+
+Route::get('/admin/room/view', [AdminRoomController::class, 'index'])->name('admin_room_view');
+Route::get('/admin/room/add', [AdminRoomController::class, 'add'])->name('admin_room_add');
+Route::post('/admin/room/store', [AdminRoomController::class, 'store'])->name('admin_room_store');
+Route::get('/admin/room/edit/{id}', [AdminRoomController::class, 'edit'])->name('admin_room_edit');
+Route::post('/admin/room/update/{id}', [AdminRoomController::class, 'update'])->name('admin_room_update');
+Route::get('/admin/room/delete/{id}', [AdminRoomController::class, 'delete'])->name('admin_room_delete');
+
+Route::get('/admin/room/gallery/{id}', [AdminRoomController::class, 'gallery'])->name('admin_room_gallery');
+Route::post('/admin/room/gallery/store/{id}', [AdminRoomController::class, 'gallery_store'])->name('admin_room_gallery_store');
+Route::get('/admin/room/gallery/delete/{id}', [AdminRoomController::class, 'gallery_delete'])->name('admin_room_gallery_delete');
