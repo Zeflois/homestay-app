@@ -29,8 +29,7 @@
                 <div class="section-header">
                     <h1>@yield('heading')</h1>
                     <div class="ml-auto">
-                        <a href="" class="btn btn-primary"><i class="fas fa-plus"></i> 
-                        Button</a>
+                        @yield('right_top_button')
                     </div>
                 </div>
 
@@ -47,6 +46,39 @@
 </div>
 
 @include('admin.layout.scripts_footer')
+
+@if($errors->any())
+    @foreach($errors->all() as $error)
+        <script>
+            iziToast.error({
+                title: '',
+                position: 'topRight',
+                message: '{{ $error }}',
+            });
+        </script>
+    @endforeach
+@endif
+
+@if(session()->get('error'))
+    <script>
+        iziToast.error({
+            title: '',
+            position: 'topRight',
+            message: '{{ session()->get('error') }}',
+        });
+    </script>
+@endif
+
+@if(session()->get('success'))
+    <script>
+        iziToast.success({
+            title: '',
+            position: 'topRight',
+            message: '{{ session()->get('success') }}',
+        });
+    </script>
+@endif
+
 
 </body>
 </html>

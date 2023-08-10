@@ -9,37 +9,10 @@
 		
         <link rel="icon" type="image/png" href="{{ asset('uploads/favicon.png') }}">
 
-        <!-- All CSS -->
-        <link rel="stylesheet" href="{{ asset('dist-front/css/bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/jquery-ui.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/animate.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/magnific-popup.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/owl.carousel.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/select2.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/select2-bootstrap.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/sweetalert2.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/spacing.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/font-awesome.min.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/daterangepicker.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/meanmenu.css') }}">
-        <link rel="stylesheet" href="{{ asset('dist-front/css/style.css') }}">
-        
-        <!-- All Javascripts -->
-        <script src="{{ asset('dist-front/js/jquery-3.6.0.min.js') }}"></script>
-        <script src="{{ asset('dist-front/js/bootstrap.min.js') }}"></script>
-        <script src="{{ asset('dist-front/js/jquery-ui.js') }}"></script>
-        <script src="{{ asset('dist-front/js/jquery.magnific-popup.min.js') }}"></script>
-        <script src="{{ asset('dist-front/js/owl.carousel.min.js') }}"></script>
-        <script src="{{ asset('dist-front/js/wow.min.js') }}"></script>
-        <script src="{{ asset('dist-front/js/select2.full.js') }}"></script>
-        <script src="{{ asset('dist-front/js/sweetalert2.min.js') }}"></script>
-        <script src="{{ asset('dist-front/js/jquery.waypoints.min.js') }}"></script>
-        <script src="{{ asset('dist-front/js/acmeticker.js') }}"></script>
-        <script src="{{ asset('dist-front/js/moment.min.js') }}"></script>
-        <script src="{{ asset('dist-front/js/daterangepicker.min.js') }}"></script>
-        <script src="{{ asset('dist-front/js/sticky_sidebar.js') }}"></script>
-        <script src="{{ asset('dist-front/js/jquery.meanmenu.js') }}"></script>
+        @include('front.layout.styles')
 
+        @include('front.layout.scripts')
+        <!-- All Javascripts -->
         <link href="https://fonts.googleapis.com/css2?family=Karla:wght@400;500&display=swap" rel="stylesheet">
         
         <!-- Google Analytics -->
@@ -95,10 +68,10 @@
                         <div class="collapse navbar-collapse mean-menu" id="navbarSupportedContent">
                             <ul class="navbar-nav ml-auto">        
                                 <li class="nav-item">
-                                    <a href="index.html" class="nav-link">Home</a>
+                                    <a href="{{ route('home') }}" class="nav-link">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="about.html" class="nav-link">About</a>
+                                    <a href="{{ route('about') }}" class="nav-link">About</a>
                                 </li>
                                 <li class="nav-item">
                                     <a href="javascript:void;" class="nav-link dropdown-toggle">Room & Suite</a>
@@ -124,18 +97,18 @@
                                     <a href="javascript:void;" class="nav-link dropdown-toggle">Gallery</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="photo-gallery.html" class="nav-link">Photo Gallery</a>
+                                            <a href="{{ route('photo_gallery') }}" class="nav-link">Photo Gallery</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="video-gallery.html" class="nav-link">Video Gallery</a>
+                                            <a href="{{ route('video_gallery') }}" class="nav-link">Video Gallery</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="blog.html" class="nav-link">Blog</a>
+                                    <a href="{{ route('blog') }}" class="nav-link">Blog</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="contact.html" class="nav-link">Contact</a>
+                                    <a href="{{ route('contact') }}" class="nav-link">Contact</a>
                                 </li>
                             </ul>
                         </div>
@@ -145,439 +118,7 @@
         </div>
 
 
-        <div class="slider">
-            <div class="slide-carousel owl-carousel">
-                <div class="item" style="background-image:url(uploads/slide1.jpg);">
-                    <div class="bg"></div>
-                    <div class="text">
-                        <h2>Best Hotel in the City</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt libero voluptate, veritatis esse dolorem soluta.
-                        </p>
-                        <div class="button">
-                            <a href="">Read More</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="item" style="background-image:url(uploads/slide2.jpg);">
-                    <div class="bg"></div>
-                    <div class="text">
-                        <h2>Quality rooms for the guests</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt libero voluptate, veritatis esse dolorem soluta.
-                        </p>
-                        <div class="button">
-                            <a href="">Read More</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-             
-         
-        <div class="search-section">
-            <div class="container">
-                <form action="cart.html" method="post">
-                <div class="inner">
-                    <div class="row">
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <select name="" class="form-select">
-                                    <option value="">Select Room</option>
-                                    <option value="">Standard Couple Bed Room</option>
-                                    <option value="">Delux Couple Bed Room</option>
-                                    <option value="">Standard Four Bed Room</option>
-                                    <option value="">Delux Four Bed Room</option>
-                                    <option value="">VIP Special Room</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-3">
-                            <div class="form-group">
-                                <input type="text" name="checkin_checkout" class="form-control daterange1" placeholder="Checkin & Checkout">
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <input type="number" name="" class="form-control" min="1" max="30" placeholder="Adults">
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <div class="form-group">
-                                <input type="number" name="" class="form-control" min="1" max="30" placeholder="Children">
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <button type="submit" class="btn btn-primary">Book Now</button>
-                        </div>
-                    </div>
-                </div>
-                </form>
-            </div>
-        </div>
-
-
-
-        <div class="home-feature">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="icon"><i class="fa fa-clock-o"></i></div>
-                            <div class="text">
-                                <h2>24 hour Room service</h2>
-                                <p>
-                                    If you find a lower online rate, we will match it and give you an additional 25% off on your stay.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="icon"><i class="fa fa-wifi"></i></div>
-                            <div class="text">
-                                <h2>Free Wifi</h2>
-                                <p>
-                                    If you find a lower online rate, we will match it and give you an additional 25% off on your stay.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="icon"><i class="fa fa-superpowers"></i></div>
-                            <div class="text">
-                                <h2>Enjoy Free Nights</h2>
-                                <p>
-                                    If you find a lower online rate, we will match it and give you an additional 25% off on your stay.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="icon"><i class="fa fa-money"></i></div>
-                            <div class="text">
-                                <h2>Save up to 40%</h2>
-                                <p>
-                                    Members get access to an exclusive discounts on Radissonblu.com. Not a member yet? Hurry Up!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="icon"><i class="fa fa-coffee"></i></div>
-                            <div class="text">
-                                <h2>Complimentary Breakfast</h2>
-                                <p>
-                                    If you find a lower online rate, we will match it and give you an additional 25% off on your stay.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="icon"><i class="fa fa-crosshairs"></i></div>
-                            <div class="text">
-                                <h2>Swimming Pool</h2>
-                                <p>
-                                    If you find a lower online rate, we will match it and give you an additional 25% off on your stay.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="icon"><i class="fa fa-cubes"></i></div>
-                            <div class="text">
-                                <h2>Gym and Fitness</h2>
-                                <p>
-                                    If you find a lower online rate, we will match it and give you an additional 25% off on your stay.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="icon"><i class="fa fa-cutlery"></i></div>
-                            <div class="text">
-                                <h2>Top Class Restaurant</h2>
-                                <p>
-                                    Members get access to an exclusive discounts on Radissonblu.com. Not a member yet? Hurry Up!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        
-        
-        <div class="home-rooms">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="main-header">Rooms and Suites</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/1.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="">Standard Couple Bed</a></h2>
-                                <div class="price">
-                                    $100/night
-                                </div>
-                                <div class="button">
-                                    <a href="room-detail.html" class="btn btn-primary">See Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/2.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="">Standard Couple Bed</a></h2>
-                                <div class="price">
-                                    $100/night
-                                </div>
-                                <div class="button">
-                                    <a href="room-detail.html" class="btn btn-primary">See Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/3.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="">Standard Couple Bed</a></h2>
-                                <div class="price">
-                                    $100/night
-                                </div>
-                                <div class="button">
-                                    <a href="room-detail.html" class="btn btn-primary">See Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/4.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="">Standard Couple Bed</a></h2>
-                                <div class="price">
-                                    $100/night
-                                </div>
-                                <div class="button">
-                                    <a href="room-detail.html" class="btn btn-primary">See Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/5.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="">Standard Couple Bed</a></h2>
-                                <div class="price">
-                                    $100/night
-                                </div>
-                                <div class="button">
-                                    <a href="room-detail.html" class="btn btn-primary">See Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/6.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="">Standard Couple Bed</a></h2>
-                                <div class="price">
-                                    $100/night
-                                </div>
-                                <div class="button">
-                                    <a href="room-detail.html" class="btn btn-primary">See Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/7.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="">Standard Couple Bed</a></h2>
-                                <div class="price">
-                                    $100/night
-                                </div>
-                                <div class="button">
-                                    <a href="room-detail.html" class="btn btn-primary">See Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/1.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="">Standard Couple Bed</a></h2>
-                                <div class="price">
-                                    $100/night
-                                </div>
-                                <div class="button">
-                                    <a href="room-detail.html" class="btn btn-primary">See Detail</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="big-button">
-                            <a href="" class="btn btn-primary">See All Rooms</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-        <div class="testimonial" style="background-image: url(uploads/slide2.jpg)">
-            <div class="bg"></div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="main-header">Our Happy Clients</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-12">
-                        <div class="testimonial-carousel owl-carousel">
-                            <div class="item">
-                                <div class="photo">
-                                    <img src="uploads/t1.jpg" alt="">
-                                </div>
-                                <div class="text">
-                                    <h4>Robert Krol</h4>
-                                    <p>CEO, ABC Company</p>
-                                </div>
-                                <div class="description">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens. Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens. 
-                                    </p>
-                                </div>
-                            </div>
-                            <div class="item">
-                                <div class="photo">
-                                    <img src="uploads/t2.jpg" alt="">
-                                </div>
-                                <div class="text">
-                                    <h4>Sal Harvey</h4>
-                                    <p>Director, DEF Company</p>
-                                </div>
-                                <div class="description">
-                                    <p>
-                                        Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens. Lorem ipsum dolor sit amet, an labores explicari qui, eu nostrum copiosae argumentum has. Latine propriae quo no, unum ridens. 
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-
-
-
-        <div class="blog-item">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <h2 class="main-header">Latest Posts</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/1.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="post.html">This is a sample blog post title</a></h2>
-                                <div class="short-des">
-                                    <p>
-                                        If you want to get some good contents from the people of your country then just contribute into the main community of your people and I am sure you will be benfitted from that. 
-                                    </p>
-                                </div>
-                                <div class="button">
-                                    <a href="post.html" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/2.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="post.html">This is a sample blog post title</a></h2>
-                                <div class="short-des">
-                                    <p>
-                                        If you want to get some good contents from the people of your country then just contribute into the main community of your people and I am sure you will be benfitted from that. 
-                                    </p>
-                                </div>
-                                <div class="button">
-                                    <a href="post.html" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="inner">
-                            <div class="photo">
-                                <img src="uploads/3.jpg" alt="">
-                            </div>
-                            <div class="text">
-                                <h2><a href="post.html">This is a sample blog post title</a></h2>
-                                <div class="short-des">
-                                    <p>
-                                        If you want to get some good contents from the people of your country then just contribute into the main community of your people and I am sure you will be benfitted from that. 
-                                    </p>
-                                </div>
-                                <div class="button">
-                                    <a href="post.html" class="btn btn-primary">Read More</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+        @yield('main_content')
 
 
         <div class="footer">
@@ -590,7 +131,9 @@
                                 <li><a href="rooms.html">Rooms & Suites</a></li>
                                 <li><a href="photo-gallery.html">Photo Gallery</a></li>
                                 <li><a href="blog.html">Blog</a></li>
-                                <li><a href="contact.html">Contact</a></li>
+                                @if($global_page_data->contact_status == 1)
+                                <li><a href="{{ route('contact') }}">{{ $global_page_data->contact_heading }}</a></li>
+                                @endif
                             </ul>
                         </div>
                     </div>
@@ -599,9 +142,9 @@
                             <h2 class="heading">Useful Links</h2>
                             <ul class="useful-links">
                                 <li><a href="index.html">Home</a></li>
-                                <li><a href="terms.html">Terms and Conditions</a></li>
-                                <li><a href="privacy.html">Privacy Policy</a></li>
-                                <li><a href="disclaimer.html">Disclaimer</a></li>
+                                <li><a href="{{ route('terms') }}">Terms and Conditions</a></li>
+                                <li><a href="{{ route('privacy') }}">Privacy Policy</a></li>
+                                <li><a href="{{ route('faq') }}">FAQ</a></li>
                             </ul>
                         </div>
                     </div>
@@ -651,9 +194,11 @@
                             <p>
                                 In order to get the latest news and other great items, please subscribe us here: 
                             </p>
-                            <form action="" method="post">
+                            <form action="{{ route('subscriber_send_email') }}" method="post" class="form_subscribe_ajax">
+                                @csrf
                                 <div class="form-group">
-                                    <input type="text" name="" class="form-control">
+                                    <input type="text" name="email" class="form-control">
+                                    <span class="text-danger error-text email_error"></span>
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-primary" value="Subscribe Now">
@@ -674,7 +219,57 @@
             <i class="fa fa-angle-up"></i>
         </div>
 		
-        <script src="{{ asset('dist-front/js/custom.js') }}"></script>        
+        @include('front.layout.scripts_footer')
 		
+        @if(session()->get('success'))
+            <script>
+                iziToast.success({
+                    title: '',
+                    position: 'topRight',
+                    message: '{{ session()->get('success') }}',
+                });
+            </script>
+        @endif
+        <script>
+            (function($){
+                $(".form_subscribe_ajax").on('submit', function(e){
+                    e.preventDefault();
+                    $('#loader').show();
+                    var form = this;
+                    $.ajax({
+                        url:$(form).attr('action'),
+                        method:$(form).attr('method'),
+                        data:new FormData(form),
+                        processData:false,
+                        dataType:'json',
+                        contentType:false,
+                        beforeSend:function(){
+                            $(form).find('span.error-text').text('');
+                        },
+                        success:function(data)
+                        {
+                            $('#loader').hide();
+                            if(data.code == 0)
+                            {
+                                $.each(data.error_message, function(prefix, val) {
+                                    $(form).find('span.'+prefix+'_error').text(val[0]);
+                                });
+                            }
+                            else if(data.code == 1)
+                            {
+                                $(form)[0].reset();
+                                iziToast.success({
+                                    title: '',
+                                    position: 'topRight',
+                                    message: data.success_message,
+                                });
+                            }
+                            
+                        }
+                    });
+                });
+            })(jQuery);
+        </script>
+        <div id="loader"></div>
    </body>
 </html>
