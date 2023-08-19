@@ -99,6 +99,7 @@
                     @foreach($room_all as $item)
                     @if($loop->iteration>4) 
                     @break
+                    @endif
                     <div class="col-md-3">
                         <div class="inner">
                             <div class="photo">

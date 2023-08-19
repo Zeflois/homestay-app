@@ -40,8 +40,8 @@
                         <ul class="right">
                             <li class="menu"><a href="cart.html">Cart</a></li>
                             <li class="menu"><a href="checkout.html">Checkout</a></li>
-                            <li class="menu"><a href="signup.html">Sign Up</a></li>
-                            <li class="menu"><a href="login.html">Login</a></li>
+                            <li class="menu"><a href="{{ route('customer_signup') }}">Sign Up</a></li>
+                            <li class="menu"><a href="{{ route('customer_login') }}">Login</a></li>
                         </ul>
                     </div>
                 </div>
@@ -221,15 +221,16 @@
 		
         @include('front.layout.scripts_footer')
 		
-        @if(session()->get('success'))
+        @if(session()->get('error'))
             <script>
-                iziToast.success({
+                iziToast.error({
                     title: '',
                     position: 'topRight',
-                    message: '{{ session()->get('success') }}',
+                    message: '{{ session()->get('error') }}',
                 });
             </script>
         @endif
+
         <script>
             (function($){
                 $(".form_subscribe_ajax").on('submit', function(e){

@@ -15,6 +15,10 @@ use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Admin\AdminSubscriberController;
 use App\Http\Controllers\Admin\AdminAmenityController;
 use App\Http\Controllers\Admin\AdminRoomController;
+
+use App\Http\Controllers\Customer\CustomerHomeController;
+use App\Http\Controllers\Customer\CustomerAuthController; 
+
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\AboutController;
 use App\Http\Controllers\Front\BlogController;
@@ -43,17 +47,37 @@ Route::post('/subscriber/send-email', [SubscriberController::class, 'send_email'
 Route::get('/subscriber/verify/{email}/{token}', [SubscriberController::class, 'verify'])->name('subscriber_verify');
 Route::get('/room', [RoomController::class, 'index'])->name('room');
 Route::get('/room/{id}', [RoomController::class, 'single_room'])->name('room_detail');
+
 /*Admin*/
-Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home');
 Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('admin_login');
 Route::post('/admin/login-submit', [AdminLoginController::class, 'login_submit'])->name('admin_login_submit');
 Route::get('/admin/logout', [AdminLoginController::class, 'logout'])->name('admin_logout');
 Route::get('/admin/forget-password', [AdminLoginController::class, 'forget_password'])->name('admin_forget_password');
 Route::post('/admin/forget-password-submit', [AdminLoginController::class, 'forget_password_submit'])->name('admin_forget_password_submit');
 
+
+/*Customer*/
+Route::get('/customer/login', [CustomerAuthController::class, 'login'])->name('customer_login');
+Route::post('/customer/login-submit', [CustomerAuthController::class, 'login_submit'])->name('customer_login_submit');
+Route::get('/customer/logout', [CustomerAuthController::class, 'logout'])->name('customer_logout');
+Route::get('/customer/signup', [CustomerAuthController::class, 'signup'])->name('customer_signup');
+Route::post('/customer/signup-submit', [CustomerAuthController::class, 'signup_submit'])->name('customer_signup_submit');
+Route::get('/signup-verify/{email}/{token}', [CustomerAuthController::class, 'signup_verify'])->name('customer_signup_verify');
+
+Route::get('/forget-password', [CustomerAuthController::class, 'forget_password'])->name('customer_forget_password');
+Route::post('/forget-password-submit', [CustomerAuthController::class, 'forget_password_submit'])->name('customer_forget_password_submit');
+
+
+
+Route::get('/customer/home', [CustomerHomeController::class, 'index'])->name('customer_home');
+Route::get('/admin/edit-profile', [CustomerProfileController::class, 'index'])->name('customer_profile');
+Route::post('/admin/edit-profile-submit', [CustomerProfileController::class, 'profile_submit'])->name('customer_profile_submit');
+
+
 Route::get('/admin/edit-profile', [AdminProfileController::class, 'index'])->name('admin_profile');
 Route::post('/admin/edit-profile-submit', [AdminProfileController::class, 'profile_submit'])->name('admin_profile_submit');
 
+Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home');
 Route::get('/admin/slide/view', [AdminSlideController::class, 'index'])->name('admin_slide_view');
 Route::get('/admin/slide/add', [AdminSlideController::class, 'add'])->name('admin_slide_add');
 Route::post('/admin/slide/store', [AdminSlideController::class, 'store'])->name('admin_slide_store');
@@ -141,6 +165,13 @@ Route::post('/admin/page/payment/update', [AdminPageController::class, 'payment_
 
 Route::get('/admin/page/signup', [AdminPageController::class, 'signup'])->name('admin_page_signup');
 Route::post('/admin/page/signup/update', [AdminPageController::class, 'signup_update'])->name('admin_page_signup_update');
+
+Route::get('/admin/page/forget_password', [AdminPageController::class, 'forget_password'])->name('admin_page_forget_password');
+Route::post('/admin/page/forget_password/update', [AdminPageController::class, 'forget_password_update'])->name('admin_page_forget_password_update');
+
+Route::get('/admin/page/reset_password', [AdminPageController::class, 'reset_password'])->name('admin_page_reset_password');
+Route::post('/admin/page/reset_password/update', [AdminPageController::class, 'reset_password_update'])->name('admin_page_reset_password_update');
+
 
 Route::get('/admin/page/signin', [AdminPageController::class, 'signin'])->name('admin_page_signin');
 Route::post('/admin/page/signin/update', [AdminPageController::class, 'signin_update'])->name('admin_page_signin_update');

@@ -65,7 +65,6 @@ class AdminLoginController extends Controller
         } else{
             return redirect()->route('admin_login')->with('error', 'information is not correct!');
         }
-
     }
     public function logout()
     {
