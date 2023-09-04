@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Admin\AdminCustomerontroller;
 use App\Http\Controllers\Admin\AdminLoginController; 
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AdminSlideController;
@@ -15,9 +16,12 @@ use App\Http\Controllers\Admin\AdminPageController;
 use App\Http\Controllers\Admin\AdminSubscriberController;
 use App\Http\Controllers\Admin\AdminAmenityController;
 use App\Http\Controllers\Admin\AdminRoomController;
+use App\Http\Controllers\Admin\AdminOrderController;
 
 use App\Http\Controllers\Customer\CustomerHomeController;
-use App\Http\Controllers\Customer\CustomerAuthController; 
+use App\Http\Controllers\Customer\CustomerAuthController;
+use App\Http\Controllers\Customer\CustomerProfileController;
+use App\Http\Controllers\Customer\CustomerOrderController;
 
 use App\Http\Controllers\Front\HomeController;
 use App\Http\Controllers\Front\AboutController;
@@ -30,8 +34,9 @@ use App\Http\Controllers\Front\PrivacyController;
 use App\Http\Controllers\Front\ContactController;
 use App\Http\Controllers\Front\SubscriberController;
 use App\Http\Controllers\Front\RoomController;
+use App\Http\Controllers\Front\BookingController;
 
-
+/* Front*/
 Route::get('/', [HomeController::class, 'index'])->name('home');
 Route::get('/about', [AboutController::class, 'index'])->name('about');
 Route::get('/blog', [BlogController::class, 'index'])->name('blog');
@@ -47,6 +52,14 @@ Route::post('/subscriber/send-email', [SubscriberController::class, 'send_email'
 Route::get('/subscriber/verify/{email}/{token}', [SubscriberController::class, 'verify'])->name('subscriber_verify');
 Route::get('/room', [RoomController::class, 'index'])->name('room');
 Route::get('/room/{id}', [RoomController::class, 'single_room'])->name('room_detail');
+Route::post('/booking/submit', [BookingController::class, 'cart_submit'])->name('cart_submit');
+Route::get('/cart', [BookingController::class, 'cart_view'])->name('cart');
+Route::get('/cart/delete/{id}', [BookingController::class, 'cart_delete'])->name('cart_delete');
+Route::get('/checkout', [BookingController::class, 'checkout'])->name('checkout');
+Route::post('/payment', [BookingController::class, 'payment'])->name('payment');
+
+Route::get('/payment/paypal/{price}', [BookingController::class, 'paypal'])->name('paypal');
+
 
 /*Admin*/
 Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('admin_login');
@@ -56,7 +69,8 @@ Route::get('/admin/forget-password', [AdminLoginController::class, 'forget_passw
 Route::post('/admin/forget-password-submit', [AdminLoginController::class, 'forget_password_submit'])->name('admin_forget_password_submit');
 
 
-/*Customer*/
+
+
 Route::get('/customer/login', [CustomerAuthController::class, 'login'])->name('customer_login');
 Route::post('/customer/login-submit', [CustomerAuthController::class, 'login_submit'])->name('customer_login_submit');
 Route::get('/customer/logout', [CustomerAuthController::class, 'logout'])->name('customer_logout');
@@ -67,17 +81,29 @@ Route::get('/signup-verify/{email}/{token}', [CustomerAuthController::class, 'si
 Route::get('/forget-password', [CustomerAuthController::class, 'forget_password'])->name('customer_forget_password');
 Route::post('/forget-password-submit', [CustomerAuthController::class, 'forget_password_submit'])->name('customer_forget_password_submit');
 
-
-
+/*Customer-Middleware*/
+Route::group(['middleware' =>['customer:customer']], function(){
 Route::get('/customer/home', [CustomerHomeController::class, 'index'])->name('customer_home');
-Route::get('/admin/edit-profile', [CustomerProfileController::class, 'index'])->name('customer_profile');
-Route::post('/admin/edit-profile-submit', [CustomerProfileController::class, 'profile_submit'])->name('customer_profile_submit');
+Route::get('/customer/edit-profile', [CustomerProfileController::class, 'index'])->name('customer_profile');
+Route::post('/customer/edit-profile-submit', [CustomerProfileController::class, 'profile_submit'])->name('customer_profile_submit');
+Route::get('/customer/order/view', [CustomerOrderController::class, 'index'])->name('customer_order_view');
+Route::get('/customer/invoice/{id}', [CustomerOrderController::class, 'invoice'])->name('customer_invoice');
+});
 
-
+/* Admin -Middleware*/
+Route::group(['middleware' =>['admin:admin']], function(){
 Route::get('/admin/edit-profile', [AdminProfileController::class, 'index'])->name('admin_profile');
 Route::post('/admin/edit-profile-submit', [AdminProfileController::class, 'profile_submit'])->name('admin_profile_submit');
 
 Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home');
+
+Route::get('/admin/customers', [AdminCustomerController::class, 'index'])->name('admin_customer');
+Route::get('/admin/customer/change-status/{id}', [AdminCustomerController::class, 'change_status'])->name('admin_customer_change_status');
+
+Route::get('/admin/order/view', [AdminOrderController::class, 'index'])->name('admin_orders');
+Route::get('/admin/order/invoice/{id}', [AdminOrderController::class, 'invoice'])->name('admin_invoice');
+Route::get('/admin/order/delete/{id}', [AdminOrderController::class, 'delete'])->name('admin_order_delete');
+
 Route::get('/admin/slide/view', [AdminSlideController::class, 'index'])->name('admin_slide_view');
 Route::get('/admin/slide/add', [AdminSlideController::class, 'add'])->name('admin_slide_add');
 Route::post('/admin/slide/store', [AdminSlideController::class, 'store'])->name('admin_slide_store');
@@ -197,3 +223,5 @@ Route::get('/admin/room/delete/{id}', [AdminRoomController::class, 'delete'])->n
 Route::get('/admin/room/gallery/{id}', [AdminRoomController::class, 'gallery'])->name('admin_room_gallery');
 Route::post('/admin/room/gallery/store/{id}', [AdminRoomController::class, 'gallery_store'])->name('admin_room_gallery_store');
 Route::get('/admin/room/gallery/delete/{id}', [AdminRoomController::class, 'gallery_delete'])->name('admin_room_gallery_delete');
+
+});

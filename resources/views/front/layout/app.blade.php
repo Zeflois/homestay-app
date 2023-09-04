@@ -38,10 +38,31 @@
                     </div>
                     <div class="col-md-6 right-side">
                         <ul class="right">
-                            <li class="menu"><a href="cart.html">Cart</a></li>
-                            <li class="menu"><a href="checkout.html">Checkout</a></li>
-                            <li class="menu"><a href="{{ route('customer_signup') }}">Sign Up</a></li>
-                            <li class="menu"><a href="{{ route('customer_login') }}">Login</a></li>
+
+                            @if($global_page_data->cart_status == 1)
+                            <li class="menu"><a href="{{ route('cart') }}">{{ $global_page_data->cart_heading }} @if(session()->get('cart_room_id'))<sup>{{count(session()->get('cart_room_id')) }}</sup>@endif</a></li>
+                            @endif
+
+                            @if($global_page_data->checkout_status == 1)
+                            <li class="menu"><a href="{{ route('checkout') }}">{{ $global_page_data->checkout_heading }}</a></li>
+                            @endif
+
+                            @if(!Auth::guard('customer')->check())
+
+                            @if($global_page_data->signup_status == 1)
+                            <li class="menu"><a href="{{ route('customer_signup') }}">{{ $global_page_data->signup_heading }}</a></li>
+                            @endif
+
+                            @if($global_page_data->signin_status == 1)
+                            <li class="menu"><a href="{{ route('customer_login') }}">{{ $global_page_data->signin_heading }}</a></li>
+                            @endif
+                               
+                            @else   
+
+                                <li class="menu"><a href="{{ route('customer_home') }}">Dashboard</a></li>
+
+                            @endif
+
                         </ul>
                     </div>
                 </div>
@@ -220,7 +241,7 @@
         </div>
 		
         @include('front.layout.scripts_footer')
-		
+	
         @if(session()->get('error'))
             <script>
                 iziToast.error({

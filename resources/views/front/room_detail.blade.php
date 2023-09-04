@@ -102,7 +102,7 @@
                     </div>
                     <div class="widget">
                         <h2>Reserve This Room</h2>
-                        <form action="" method="post">
+                        <form action="{{ route( 'cart_submit') }}" method="post">
                             @csrf
                             <input type="hidden" name="room_id" value="{{ $single_room_data->id }}">
                             <div class="form-group mb_20">
@@ -119,8 +119,7 @@
                             </div>
                             <button type="submit" class="book-now">Add to Cart</button>
                         </form>
-                    </div>
-
+                  
                 </div>
 
 

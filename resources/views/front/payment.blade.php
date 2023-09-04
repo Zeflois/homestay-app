@@ -85,7 +85,7 @@
                     $customer_email = Auth::guard('customer')->user()->email;
                     $stripe_publishable_key = 'pk_test_51LT28GF67T3XLjgLXbAMW8YNgvDyv6Yrg7mB6yHJhfmWgLrAL79rSBPvxcbKrsKtCesqJmxlOd259nMrNx4Qlhoa00zX7rOhOq';
                     @endphp
-                    <form action="{{ route('stripe',$total_price) }}" method="post">
+                    <form action="{{ route('payment',$total_price) }}" method="post">
                         @csrf
                         <script
                             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -218,7 +218,7 @@
 </div>
 
 @php
-$client = 'ARw2VtkTvo3aT7DILgPWeSUPjMK_AS5RlMKkUmB78O8rFCJcfX6jFSmTDpgdV3bOFLG2WE-s11AcCGTD';
+$client = 'AZXdKAt00YhZUC_PZt2rN-2-Da62gHOOO2N5xQa-DUaFizJUjmZVXN-M2CrsivXeX9_wXEQKvlJaMDs4';
 @endphp
 <script>
 	paypal.Button.render({
