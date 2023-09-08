@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Admin\AdminSettingController;
 use App\Http\Controllers\Admin\AdminCustomerontroller;
 use App\Http\Controllers\Admin\AdminLoginController; 
 use App\Http\Controllers\Admin\AdminProfileController;
@@ -17,6 +18,8 @@ use App\Http\Controllers\Admin\AdminSubscriberController;
 use App\Http\Controllers\Admin\AdminAmenityController;
 use App\Http\Controllers\Admin\AdminRoomController;
 use App\Http\Controllers\Admin\AdminOrderController;
+use App\Http\Controllers\Admin\AdminDatewiseRoomController;
+
 
 use App\Http\Controllers\Customer\CustomerHomeController;
 use App\Http\Controllers\Customer\CustomerAuthController;
@@ -96,6 +99,11 @@ Route::get('/admin/edit-profile', [AdminProfileController::class, 'index'])->nam
 Route::post('/admin/edit-profile-submit', [AdminProfileController::class, 'profile_submit'])->name('admin_profile_submit');
 
 Route::get('/admin/home', [AdminHomeController::class, 'index'])->name('admin_home');
+Route::get('/admin/setting', [AdminSettingController::class, 'index'])->name('admin_setting');
+Route::post('/admin/setting/update', [AdminSettingController::class, 'update'])->name('admin_setting_update');
+
+Route::get('/admin/datewise-rooms', [AdminDatewiseRoomController::class, 'index'])->name('admin_datewise_rooms');
+Route::post('/admin/datewise-rooms/submit', [AdminDatewiseRoomController::class, 'show'])->name('admin_datewise_rooms_submit');
 
 Route::get('/admin/customers', [AdminCustomerController::class, 'index'])->name('admin_customer');
 Route::get('/admin/customer/change-status/{id}', [AdminCustomerController::class, 'change_status'])->name('admin_customer_change_status');
