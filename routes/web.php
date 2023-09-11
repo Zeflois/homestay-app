@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\AdminSettingController;
-use App\Http\Controllers\Admin\AdminCustomerontroller;
+use App\Http\Controllers\Admin\AdminCustomercontroller;
 use App\Http\Controllers\Admin\AdminLoginController; 
 use App\Http\Controllers\Admin\AdminProfileController;
 use App\Http\Controllers\Admin\AdminSlideController;
@@ -61,8 +61,9 @@ Route::get('/cart/delete/{id}', [BookingController::class, 'cart_delete'])->name
 Route::get('/checkout', [BookingController::class, 'checkout'])->name('checkout');
 Route::post('/payment', [BookingController::class, 'payment'])->name('payment');
 
-Route::get('/payment/paypal/{price}', [BookingController::class, 'paypal'])->name('paypal');
-
+Route::post('/payment/paypal/{price}', [BookingController::class, 'paypal'])->name('paypal');
+Route::get('/payment/paypal/success', [BookingController::class, 'success'])->name('paypal_success');
+Route::get('/payment/paypal/cancel', [BookingController::class, 'cancel'])->name('paypal_cancel');
 
 /*Admin*/
 Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('admin_login');
