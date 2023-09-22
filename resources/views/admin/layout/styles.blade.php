@@ -14,3 +14,4 @@
 <link rel="stylesheet" href="{{ asset('dist/css/components.css') }}">
 <link rel="stylesheet" href="{{ asset('dist/css/spacing.css') }}">
 <link rel="stylesheet" href="{{ asset('dist/css/custom.css') }}">
+<link rel="stylesheet" href="{{ asset('dist-front/fontawesome-free-6.4.2-web/css/all.min.css') }}">

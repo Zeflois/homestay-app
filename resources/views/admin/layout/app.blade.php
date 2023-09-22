@@ -26,9 +26,9 @@
 
         <div class="main-content">
             <section class="section">
-                <div class="section-header">
+                <div class="section-header d-flex justify-content-between align-items-center">
                     <h1>@yield('heading')</h1>
-                    <div class="ml-auto">
+                    <div class="ml-auto ">
                         @yield('right_top_button')
                     </div>
                 </div>
