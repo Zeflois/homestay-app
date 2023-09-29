@@ -101,7 +101,7 @@
                         </div>
                     </div>
                     <div class="widget">
-                        <h2>Reserve This Room</h2>
+                        <h2>Pesan Kamar Ini</h2>
                         <form action="" method="post">
                             @csrf
                             <input type="hidden" name="room_id" value="{{ $single_room_data->id }}">
@@ -110,14 +110,14 @@
                                 <input type="text" name="checkin_checkout" class="form-control daterange1" placeholder="Checkin & Checkout">
                             </div>
                             <div class="form-group mb_20">
-                                <label for="">Adult</label>
+                                <label for="">Dewasa</label>
                                 <input type="number" name="adult" class="form-control" min="1" max="30" placeholder="Adults">
                             </div>
                             <div class="form-group mb_20">
-                                <label for="">Children</label>
+                                <label for="">Anak-anak</label>
                                 <input type="number" name="children" class="form-control" min="0" max="30" placeholder="Children">
                             </div>
-                            <button type="submit" class="book-now">Add to Cart</button>
+                            <button type="submit" class="book-now">Tambahkan ke Keranjang</button>
                         </form>
                     </div>
 

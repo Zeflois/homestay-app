@@ -31,32 +31,29 @@
                         <div class="col-lg-3">
                             <div class="form-group">
                                 <select name="" class="form-select">
-                                    <option value="">Select Room</option>
-                                    <option value="">Standard Couple Bed Room</option>
-                                    <option value="">Delux Couple Bed Room</option>
-                                    <option value="">Standard Four Bed Room</option>
-                                    <option value="">Delux Four Bed Room</option>
-                                    <option value="">VIP Special Room</option>
+                                    <option value="">Pilih Kamar</option>
+                                    <option value="">Kamar Standar</option>
+                                    <option value="">Kamar Keluarga</option>
                                 </select>
                             </div>
                         </div>
                         <div class="col-lg-3">
                             <div class="form-group">
-                                <input type="text" name="checkin_checkout" class="form-control daterange1" placeholder="Checkin & Checkout">
+                                <input type="text" name="checkin_checkout" class="form-control daterange1" placeholder="Waktu Check-in dan Check-out">
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <input type="number" name="" class="form-control" min="1" max="30" placeholder="Adults">
+                                <input type="number" name="" class="form-control" min="1" max="30" placeholder="Dewasa">
                             </div>
                         </div>
                         <div class="col-lg-2">
                             <div class="form-group">
-                                <input type="number" name="" class="form-control" min="1" max="30" placeholder="Children">
+                                <input type="number" name="" class="form-control" min="1" max="30" placeholder="Anak-anak">
                             </div>
                         </div>
                         <div class="col-lg-2">
-                            <button type="submit" class="btn btn-primary">Book Now</button>
+                            <button type="submit" class="btn btn-primary">Pesan Sekarang</button>
                         </div>
                     </div>
                 </div>
@@ -92,7 +89,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="main-header">Rooms and Suites</h2>
+                        <h2 class="main-header">Kamar</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -108,10 +105,10 @@
                             <div class="text">
                                 <h2><a href="{{ route('room_detail',$item->id) }}">{{ $item->name }}</a></h2>
                                 <div class="price">
-                                ${{ $item->price }}/night
+                                ${{ $item->price }}/malam
                                 </div>
                                 <div class="button">
-                                    <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">See Detail</a>
+                                    <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">Lihat Detail</a>
                                 </div>
                             </div>
                         </div>
@@ -121,7 +118,7 @@
                 <div class="row">
                     <div class="col-md-12">
                         <div class="big-button">
-                            <a href="{{ route('room') }}" class="btn btn-primary">See All Rooms</a>
+                            <a href="{{ route('room') }}" class="btn btn-primary">Lihat Semua Kamar</a>
                         </div>
                     </div>
                 </div>
@@ -135,7 +132,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="main-header">Our Happy Clients</h2>
+                        <h2 class="main-header">Client Kami</h2>
                     </div>
                 </div>
                 <div class="row">
@@ -170,7 +167,7 @@
             <div class="container">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2 class="main-header">Latest Posts</h2>
+                        <h2 class="main-header">Berita Terbaru</h2>
                     </div>
                 </div>
                 <div class="row">
