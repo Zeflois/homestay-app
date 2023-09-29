@@ -18,12 +18,12 @@
             <div class="col-lg-8 col-md-7 col-sm-12 left">
 
                 <div class="room-detail-carousel owl-carousel">
-                    <div class="item" style="background-image:url({{ asset('uploads/'.$single_room_data->featured_photo) }});">
+                    <div class="item" style="background-image:url({{ asset('uploads/'.$single_room_data->featured_photo) }});background-size: 100% 100%; background-position: center;">
                         <div class="bg"></div>
                     </div>
                     
                     @foreach($single_room_data->rRoomPhoto as $item)
-                    <div class="item" style="background-image:url({{ asset('uploads/'.$item->photo) }});">
+                    <div class="item" style="background-image:url({{ asset('uploads/'.$item->photo) }});background-size: 100% 100%; background-position: center;">
                         <div class="bg"></div>
                     </div>
                     @endforeach
@@ -102,7 +102,7 @@
                     </div>
                     <div class="widget">
                         <h2>Reserve This Room</h2>
-                        <form action="" method="post">
+                        <form action="{{ route( 'cart_submit') }}" method="post">
                             @csrf
                             <input type="hidden" name="room_id" value="{{ $single_room_data->id }}">
                             <div class="form-group mb_20">
@@ -119,8 +119,7 @@
                             </div>
                             <button type="submit" class="book-now">Add to Cart</button>
                         </form>
-                    </div>
-
+                  
                 </div>
 
 

@@ -73,9 +73,13 @@
                     <option value="Stripe">Stripe</option>
                 </select>
 
-                <div class="paypal mt_20">
+                <div class="paypal mt_20" id="paypalContainer" style="display: none;">
                     <h4>Pay with PayPal</h4>
-                    <div id="paypal-button"></div>
+                    <form method="POST" action="{{route('paypal',$total_price)}}">
+                        @csrf
+                        <!-- Add other form fields and PayPal-related inputs here -->
+                         <button class="btn btn-primary" type="submit"><i class="fa fa-paypal" aria-hidden="true"></i> Paypal</button>
+                    </form>
                 </div>
 
                 <div class="stripe mt_20">
@@ -85,7 +89,7 @@
                     $customer_email = Auth::guard('customer')->user()->email;
                     $stripe_publishable_key = 'pk_test_51LT28GF67T3XLjgLXbAMW8YNgvDyv6Yrg7mB6yHJhfmWgLrAL79rSBPvxcbKrsKtCesqJmxlOd259nMrNx4Qlhoa00zX7rOhOq';
                     @endphp
-                    <form action="{{ route('stripe',$total_price) }}" method="post">
+                    <form action="{{ route('payment',$total_price) }}" method="post">
                         @csrf
                         <script
                             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
@@ -216,41 +220,21 @@
         </div>
     </div>
 </div>
-
-@php
-$client = 'ARw2VtkTvo3aT7DILgPWeSUPjMK_AS5RlMKkUmB78O8rFCJcfX6jFSmTDpgdV3bOFLG2WE-s11AcCGTD';
-@endphp
 <script>
-	paypal.Button.render({
-		env: 'sandbox',
-		client: {
-			sandbox: '{{ $client }}',
-			production: '{{ $client }}'
-		},
-		locale: 'en_US',
-		style: {
-			size: 'medium',
-			color: 'blue',
-			shape: 'rect',
-		},
-		// Set up a payment
-		payment: function (data, actions) {
-			return actions.payment.create({
-				redirect_urls:{
-					return_url: '{{ url("payment/paypal/$total_price") }}'
-				},
-				transactions: [{
-					amount: {
-						total: '{{ $total_price }}',
-						currency: 'USD'
-					}
-				}]
-			});
-		},
-		// Execute the payment
-		onAuthorize: function (data, actions) {
-			return actions.redirect();
-		}
-	}, '#paypal-button');
+    // Get references to the relevant elements
+    const paymentMethodDropdown = document.getElementById("paymentMethodChange");
+    const paypalContainer = document.getElementById("paypalContainer");
+
+    // Add an event listener to the dropdown
+    paymentMethodDropdown.addEventListener("change", function () {
+        const selectedOption = paymentMethodDropdown.value;
+
+        // Show the PayPal container if "PayPal" is selected, otherwise hide it
+        if (selectedOption === "PayPal") {
+            paypalContainer.style.display = "block";
+        } else {
+            paypalContainer.style.display = "none";
+        }
+    });
 </script>
 @endsection

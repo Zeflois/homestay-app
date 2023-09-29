@@ -107,6 +107,9 @@ select {
 .top ul.right li:first-child:before {
 	display: none;
 }
+.top ul li a sup{
+	color:rgb(255, 0, 0);
+}
 @media (max-width: 991px) { 
 	.top {
 		padding-top: 3px;

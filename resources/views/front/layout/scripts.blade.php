@@ -13,3 +13,4 @@
 <script src="{{ asset('dist-front/js/sticky_sidebar.js') }}"></script>
 <script src="{{ asset('dist-front/js/jquery.meanmenu.js') }}"></script>
 <script src="{{ asset('dist-front/js/iziToast.min.js') }}"></script>
+<script src="https://kit.fontawesome.com/4a31d876f2.js" crossorigin="anonymous"></script>
