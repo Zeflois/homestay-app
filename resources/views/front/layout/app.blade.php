@@ -32,13 +32,13 @@
                 <div class="row">
                     <div class="col-md-6 left-side">
                         <ul>
-                            <li class="phone-text">111-222-3333</li>
-                            <li class="email-text">contact@arefindev.com</li>
+                            <li class="phone-text">082314913366</li>
+                            <li class="email-text">nibeniahomestay@gmail.com</li>
                         </ul>
                     </div>
                     <div class="col-md-6 right-side">
                         <ul class="right">
-                            <li class="menu"><a href="cart.html">Cart</a></li>
+                            <li class="menu"><a href="cart.html">Keranjang</a></li>
                             <li class="menu"><a href="checkout.html">Checkout</a></li>
                             <li class="menu"><a href="{{ route('customer_signup') }}">Sign Up</a></li>
                             <li class="menu"><a href="{{ route('customer_login') }}">Login</a></li>
@@ -71,36 +71,27 @@
                                     <a href="{{ route('home') }}" class="nav-link">Home</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('about') }}" class="nav-link">About</a>
+                                    <a href="{{ route('about') }}" class="nav-link">Tentang</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="javascript:void;" class="nav-link dropdown-toggle">Room & Suite</a>
+                                    <a href="javascript:void;" class="nav-link dropdown-toggle">Kamar</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="room-detail.html" class="nav-link">Regular Couple Bed</a>
+                                            <a href="room-detail.html" class="nav-link">Kamar Standar</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="room-detail.html" class="nav-link">Delux Couple Bed</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="room-detail.html" class="nav-link">Regular Double Bed</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="room-detail.html" class="nav-link">Delux Double Bed</a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="room-detail.html" class="nav-link">Premium Suite</a>
+                                            <a href="room-detail.html" class="nav-link">Kamar Keluarga</a>
                                         </li>
                                     </ul>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="javascript:void;" class="nav-link dropdown-toggle">Gallery</a>
+                                    <a href="javascript:void;" class="nav-link dropdown-toggle">Galeri</a>
                                     <ul class="dropdown-menu">
                                         <li class="nav-item">
-                                            <a href="{{ route('photo_gallery') }}" class="nav-link">Photo Gallery</a>
+                                            <a href="{{ route('photo_gallery') }}" class="nav-link">Foto</a>
                                         </li>
                                         <li class="nav-item">
-                                            <a href="{{ route('video_gallery') }}" class="nav-link">Video Gallery</a>
+                                            <a href="{{ route('video_gallery') }}" class="nav-link">Video</a>
                                         </li>
                                     </ul>
                                 </li>
@@ -108,7 +99,7 @@
                                     <a href="{{ route('blog') }}" class="nav-link">Blog</a>
                                 </li>
                                 <li class="nav-item">
-                                    <a href="{{ route('contact') }}" class="nav-link">Contact</a>
+                                    <a href="{{ route('contact') }}" class="nav-link">Kontak</a>
                                 </li>
                             </ul>
                         </div>
@@ -128,7 +119,7 @@
                         <div class="item">
                             <h2 class="heading">Site Links</h2>
                             <ul class="useful-links">
-                                <li><a href="rooms.html">Rooms & Suites</a></li>
+                                <li><a href="rooms.html">Kamar</a></li>
                                 <li><a href="photo-gallery.html">Photo Gallery</a></li>
                                 <li><a href="blog.html">Blog</a></li>
                                 @if($global_page_data->contact_status == 1)

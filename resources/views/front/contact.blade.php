@@ -20,22 +20,22 @@
                     @csrf
                     <div class="contact-form">
                         <div class="mb-3">
-                            <label for="" class="form-label">Name *</label>
+                            <label for="" class="form-label">Nama *</label>
                             <input type="text" class="form-control" name="name">
                             <span class="text-danger error-text name_error"></span>
                         </div>
                         <div class="mb-3">
-                            <label for="" class="form-label">Email Address *</label>
+                            <label for="" class="form-label">E-mail *</label>
                             <input type="text" class="form-control" name="email">
                             <span class="text-danger error-text email_error"></span>
                         </div>
                         <div class="mb-3">
-                            <label for="" class="form-label">Message *</label>
+                            <label for="" class="form-label">Pesan *</label>
                             <textarea class="form-control" rows="3" name="message"></textarea>
                             <span class="text-danger error-text message_error"></span>
                         </div>
                         <div class="mb-3">
-                            <button type="submit" class="btn btn-primary bg-website">Send Message</button>
+                            <button type="submit" class="btn btn-primary bg-website">Kirim</button>
                         </div>
                     </div>
                 </form>

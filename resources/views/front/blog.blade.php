@@ -29,7 +29,7 @@
                             </p>
                         </div>
                         <div class="button">
-                            <a href="{{ route('post',$item->id) }}" class="btn btn-primary">Read More</a>
+                            <a href="{{ route('post',$item->id) }}" class="btn btn-primary">Baca Selengkapnya</a>
                         </div>
                     </div>
                 </div>
