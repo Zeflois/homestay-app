@@ -21,7 +21,7 @@
                         @csrf
                         <div class="login-form">
                             <div class="mb-3">
-                                <label for="" class="form-label">Email Address</label>
+                                <label for="" class="form-label">E-mail</label>
                                 <input type="text" class="form-control" name="email">
                                 @if($errors->has('email'))
                                     <span class="text-danger">{{ $errors->first('email') }}</span>
@@ -36,10 +36,10 @@
                             </div>
                             <div class="mb-3">
                                 <button type="submit" class="btn btn-primary bg-website">Login</button>
-                                <a href="" class="primary-color">Forget Password?</a>
+                                <a href="" class="primary-color">Lupa Password?</a>
                             </div>
                             <div class="mb-3">
-                                <a href="{{ route('customer_signup') }}" class="primary-color">New User? Make Registration</a>
+                                <a href="{{ route('customer_signup') }}" class="primary-color">Pengguna Baru? Registrasi</a>
                             </div>
                         </div>
                     </form>

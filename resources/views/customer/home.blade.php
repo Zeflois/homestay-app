@@ -11,7 +11,7 @@
             </div>
             <div class="card-wrap">
                 <div class="card-header">
-                    <h4>Completed Orders</h4>
+                    <h4>Pesanan Selesai</h4>
                 </div>
                 <div class="card-body">
                     {{ $total_completed_orders }}
@@ -26,7 +26,7 @@
             </div>
             <div class="card-wrap">
                 <div class="card-header">
-                    <h4>Pending Orders</h4>
+                    <h4>Pesanan Menunggu</h4>
                 </div>
                 <div class="card-body">
                     {{ $total_pending_orders }}

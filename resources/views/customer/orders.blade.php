@@ -13,10 +13,10 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Order No</th>
-                                    <th>Payment Method</th>
-                                    <th>Booking Date</th>
-                                    <th>Paid Amount</th>
+                                    <th>Pesanan No</th>
+                                    <th>Metode Pembayaran</th>
+                                    <th>Tanggal Pemesanan</th>
+                                    <th>Jumlah Pembayaran</th>
                                     <th>Action</th>
                                 </tr>
                             </thead>
