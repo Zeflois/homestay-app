@@ -17,7 +17,7 @@
                                     <th>Metode Pembayaran</th>
                                     <th>Tanggal Pemesanan</th>
                                     <th>Jumlah Pembayaran</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>

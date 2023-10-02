@@ -175,7 +175,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h2 class="main-header">Latest Posts</h2>
+                <h2 class="main-header">Postingan Terbaru</h2>
             </div>
         </div>
         <div class="row">
@@ -197,7 +197,7 @@
                             </p>
                         </div>
                         <div class="button">
-                            <a href="{{ route('post',$item->id) }}" class="btn btn-primary">Read More</a>
+                            <a href="{{ route('post',$item->id) }}" class="btn btn-primary">Lihat Selengkapnya</a>
                         </div>
                     </div>
                 </div>
