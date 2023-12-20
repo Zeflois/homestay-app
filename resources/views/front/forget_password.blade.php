@@ -29,7 +29,7 @@
                                 </div>
                                 <div class="mb-3">
                                     <button type="submit" class="btn btn-primary bg-website">Submit</button>
-                                    <a href="login.html" class="primary-color">Back to Login Page</a>
+                                    <a href="login.html" class="primary-color">Kembali ke Halaman Login</a>
                                 </div>
                             </div>
                         </form>

@@ -12,11 +12,7 @@ use App\Models\Room;
 use Auth;
 use DB;
 use App\Mail\Websitemail;
-use PayPal\Api\Amount;
-use PayPal\Api\Details;
-use PayPal\Api\Payment;
-use PayPal\Api\PaymentExecution;
-use PayPal\Api\Transaction;
+use Srmklive\PayPal\Services\PayPal as PayPalClient;
 Use Stripe;
 
 class BookingController extends Controller
@@ -189,40 +185,44 @@ class BookingController extends Controller
 
     public function paypal($final_price)
     {
-        $client = 'ARw2VtkTvo3aT7DILgPWeSUPjMK_AS5RlMKkUmB78O8rFCJcfX6jFSmTDpgdV3bOFLG2WE-s11AcCGTD';
-        $secret = 'EPi7BbZ0b5GP9jmy095MyNkfYjJc3PF42fC58emf-FXRZF7kEUmHKpV0rfGl6EEWXUx0TSvo0FmXkzuy';
+        $provider = new PayPalClient;
+        $provider -> setApiCredentials(config('paypal'));
+        $paypalToken = $provider->getAccessToken();
 
-        $apiContext = new \PayPal\Rest\ApiContext(
-            new \PayPal\Auth\OAuthTokenCredential(
-                $client, // ClientID
-                $secret // ClientSecret
-            )
-        );
+        $response = $provider->createOrder([
+            "intent" => "CAPTURE",
+            "application_context" => [
+                "return_url" => route('paypal_success'),
+                "cancel_url" => route('paypal_cancel')
+            ],
+            "purchase_units"=> [
+                [
+                  "amount"=> [
+                    "currency_code"=> "USD",
+                    "value"=> $final_price
+                  ]
+                ]
+            ]
+        ]);
+        if(isset($response['id']) && $response['id'] != null){
+            foreach($response['links'] as $link){
+                if($link['rel'] === 'approve'){
+                    return redirect()->away($link['href']);
+                }
+            }
+        }else{
+            return redirect()->route('paypal_cancel');
+        }
+    }
 
-        $paymentId = request('paymentId');
-        $payment = Payment::get($paymentId, $apiContext);
+    public function success(Request $request){
+        $provider = new PayPalClient;
+        $provider -> setApiCredentials(config('paypal'));
+        $paypalToken = $provider->getAccessToken();
+        $response = $provider -> capturePaymentOrder($request->token);
 
-        $execution = new PaymentExecution();
-        $execution->setPayerId(request('PayerID'));
-
-        $transaction = new Transaction();
-        $amount = new Amount();
-        $details = new Details();
-
-        $details->setShipping(0)
-            ->setTax(0)
-            ->setSubtotal($final_price);
-
-        $amount->setCurrency('USD');
-        $amount->setTotal($final_price);
-        $amount->setDetails($details);
-        $transaction->setAmount($amount);
-        $execution->addTransaction($transaction);
-        $result = $payment->execute($execution, $apiContext);
-
-        if($result->state == 'approved')
-        {
-            $paid_amount = $result->transactions[0]->amount->total;
+        if (isset($response['status']) && $response['status'] == 'COMPLETED'){
+            $paid_amount = $response['purchase_units'][0]['payments']['captures'][0]['amount']['value'];
             
             $order_no = time();
 
@@ -232,7 +232,7 @@ class BookingController extends Controller
             $obj = new Order();
             $obj->customer_id = Auth::guard('customer')->user()->id;
             $obj->order_no = $order_no;
-            $obj->transaction_id = $result->id;
+            $obj->transaction_id = $response['purchase_units'][0]['payments']['captures'][0]['id'];
             $obj->payment_method = 'PayPal';
             $obj->paid_amount = $paid_amount;
             $obj->booking_date = date('d/m/Y');
@@ -316,7 +316,7 @@ class BookingController extends Controller
             $subject = 'New Order';
             $message = 'You have made an order for hotel booking. The booking information is given below: <br>';
             $message .= '<br>Order No: '.$order_no;
-            $message .= '<br>Transaction Id: '.$result->id;
+            $message .= '<br>Transaction Id: '.$response['purchase_units'][0]['payments']['captures'][0]['id'];
             $message .= '<br>Payment Method: PayPal';
             $message .= '<br>Paid Amount: '.$paid_amount;
             $message .= '<br>Booking Date: '.date('d/m/Y').'<br>';
@@ -351,14 +351,13 @@ class BookingController extends Controller
             session()->forget('billing_city');
             session()->forget('billing_zip');
 
-            return redirect()->route('home')->with('success', 'Payment is successful');
+            return redirect()->route('home')->with('success', 'Payment is successful'); 
+        }else{
+            return redirect()->route('paypal_cancel');
         }
-        else
-        {
-            return redirect()->route('home')->with('error', 'Payment is failed');
-        }
-
-
+    }
+    public function cancel(){
+        return redirect()->route('home')->with('error', 'Payment is Failed');
     }
 
     public function stripe(Request $request,$final_price)

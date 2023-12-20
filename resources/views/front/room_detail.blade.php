@@ -18,12 +18,12 @@
             <div class="col-lg-8 col-md-7 col-sm-12 left">
 
                 <div class="room-detail-carousel owl-carousel">
-                    <div class="item" style="background-image:url({{ asset('uploads/'.$single_room_data->featured_photo) }});">
+                    <div class="item" style="background-image:url({{ asset('uploads/'.$single_room_data->featured_photo) }});background-size: 100% 100%; background-position: center;">
                         <div class="bg"></div>
                     </div>
                     
                     @foreach($single_room_data->rRoomPhoto as $item)
-                    <div class="item" style="background-image:url({{ asset('uploads/'.$item->photo) }});">
+                    <div class="item" style="background-image:url({{ asset('uploads/'.$item->photo) }});background-size: 100% 100%; background-position: center;">
                         <div class="bg"></div>
                     </div>
                     @endforeach
@@ -37,7 +37,7 @@
                 <div class="amenity">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2>Amenities</h2>
+                            <h2>Fasilitas</h2>
                         </div>
                     </div>
                     <div class="row">
@@ -57,25 +57,25 @@
                 <div class="feature">
                     <div class="row">
                         <div class="col-md-12">
-                            <h2>Features</h2>
+                            <h2>Fitur</h2>
                         </div>
                     </div>
                     <div class="table-responsive">
                         <table class="table table-bordered">
                             <tr>
-                                <th>Room Size</th>
+                                <th>Ukuran Ruangan</th>
                                 <td>{{ $single_room_data->size }}</td>
                             </tr>
                             <tr>
-                                <th>Number of Beds</th>
+                                <th>Jumlah Kasur</th>
                                 <td>{{ $single_room_data->total_beds }}</td>
                             </tr>
                             <tr>
-                                <th>Number of Bathrooms</th>
+                                <th>Jumlah Kamar Mandi</th>
                                 <td>{{ $single_room_data->total_bathrooms }}</td>
                             </tr>
                             <tr>
-                                <th>Number of Balconies</th>
+                                <th>Jumlah Balkon</th>
                                 <td>{{ $single_room_data->total_balconies }}</td>
                             </tr>
                         </table>
@@ -95,29 +95,29 @@
                 <div class="sidebar-container" id="sticky_sidebar">
 
                     <div class="widget">
-                        <h2>Room Price per Night</h2>
+                        <h2>Harga per Malam</h2>
                         <div class="price">
                             ${{ $single_room_data->price }}
                         </div>
                     </div>
                     <div class="widget">
-                        <h2>Reserve This Room</h2>
+                        <h2>Pesan Homestay</h2>
                         <form action="{{ route( 'cart_submit') }}" method="post">
                             @csrf
                             <input type="hidden" name="room_id" value="{{ $single_room_data->id }}">
                             <div class="form-group mb_20">
-                                <label for="">Check in & Check out</label>
-                                <input type="text" name="checkin_checkout" class="form-control daterange1" placeholder="Checkin & Checkout">
+                                <label for="">Check-in dan Check-out</label>
+                                <input type="text" name="checkin_checkout" class="form-control daterange1" placeholder="Check-in dan Check-out">
                             </div>
                             <div class="form-group mb_20">
-                                <label for="">Adult</label>
-                                <input type="number" name="adult" class="form-control" min="1" max="30" placeholder="Adults">
+                                <label for="">Dewasa</label>
+                                <input type="number" name="adult" class="form-control" min="1" max="30" placeholder="Dewasa">
                             </div>
                             <div class="form-group mb_20">
-                                <label for="">Children</label>
-                                <input type="number" name="children" class="form-control" min="0" max="30" placeholder="Children">
+                                <label for="">Anak-anak</label>
+                                <input type="number" name="children" class="form-control" min="0" max="30" placeholder="Anak-anak">
                             </div>
-                            <button type="submit" class="book-now">Add to Cart</button>
+                            <button type="submit" class="book-now">Tambahkan ke Keranjang</button>
                         </form>
                   
                 </div>

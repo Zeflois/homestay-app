@@ -6,17 +6,17 @@ Password: TheBigHotel999
 https://www.sandbox.paypal.com/signin
 
 Sandbox - Personal:
-sb-gztsq25932080@personal.example.com
+hotel_sanbox@personal.com
 TheBigHotel999
 
 Sandbox - Business:
-sb-13vlx27210205@business.example.com
+hotel_sanbox@business.com
 TheBigHotel999
 
 API Credential:
-APP Name: Nibenia_Homestay_APP
-sb-13vlx27210205@business.example.com
+APP Name: APP_HOTEL_NEW
+hotel_sanbox@business.com
 Client ID:
-AZXdKAt00YhZUC_PZt2rN-2-Da62gHOOO2N5xQa-DUaFizJUjmZVXN-M2CrsivXeX9_wXEQKvlJaMDs4
+AYFrVLu1_ODPw7Y0-Yg_M-uvk8sqgLRly1mtZUle0MOjZtNpRHYCWBkteIni70BPa4Pf8AuX3ISitVnW
 Secret:
-EIMYLArA22AFYEfg8sKJRSP7lP6zZ9FTK6CMtVsJDwRml4L_Xwf1SU16CjVZhciVaNvq-10OOZSTv7xl
+ENSE3_0aqX4OsCA2xElgPiUYh-jlamNKETzWORvi-FuPzErJB3RjFc0u-Za3yWFsEU5eytVc04xZaZDI

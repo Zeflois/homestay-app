@@ -19,7 +19,7 @@
                 <form action="{{ route('payment') }}" method="post" class="frm_checkout">
                     @csrf
                     <div class="billing-info">
-                        <h4 class="mb_30">Billing Information</h4>
+                        <h4 class="mb_30">Informasi Pembayaran</h4>
                         @php
                         if(session()->has('billing_name')) {
                             $billing_name = session()->get('billing_name');
@@ -71,35 +71,35 @@
                         @endphp
                         <div class="row">
                             <div class="col-lg-6">
-                                <label for="">Name: *</label>
+                                <label for="">Nama: *</label>
                                 <input type="text" class="form-control mb_15" name="billing_name" value="{{ $billing_name }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Email Address: *</label>
+                                <label for="">E-mail: *</label>
                                 <input type="text" class="form-control mb_15" name="billing_email" value="{{ $billing_email }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Phone Number: *</label>
+                                <label for="">Nomor Handphone: *</label>
                                 <input type="text" class="form-control mb_15" name="billing_phone" value="{{ $billing_phone }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Country: *</label>
+                                <label for="">Negara: *</label>
                                 <input type="text" class="form-control mb_15" name="billing_country" value="{{ $billing_country }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Address: *</label>
+                                <label for="">Alamat: *</label>
                                 <input type="text" class="form-control mb_15" name="billing_address" value="{{ $billing_address }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">State: *</label>
+                                <label for="">Provinsi: *</label>
                                 <input type="text" class="form-control mb_15" name="billing_state" value="{{ $billing_state }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">City: *</label>
+                                <label for="">Kota: *</label>
                                 <input type="text" class="form-control mb_15" name="billing_city" value="{{ $billing_city }}">
                             </div>
                             <div class="col-lg-6">
-                                <label for="">Zip Code: *</label>
+                                <label for="">Kode Zip: *</label>
                                 <input type="text" class="form-control mb_15" name="billing_zip" value="{{ $billing_zip }}">
                             </div>
                         </div>
@@ -109,7 +109,7 @@
             </div>
             <div class="col-lg-4 col-md-6 checkout-right">
                 <div class="inner">
-                    <h4 class="mb_10">Cart Details</h4>
+                    <h4 class="mb_10">Detail Keranjang</h4>
                     <div class="table-responsive">
                         <table class="table">
                             <tbody>

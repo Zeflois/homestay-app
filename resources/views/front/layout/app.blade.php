@@ -174,7 +174,7 @@
 
                                 @if($global_page_data->photo_gallery_status == 1 || $global_page_data->video_gallery_status == 1)
                                 <li class="nav-item">
-                                    <a href="javascript:void;" class="nav-link dropdown-toggle">Gallery</a>
+                                    <a href="javascript:void;" class="nav-link dropdown-toggle">Galeri</a>
                                     <ul class="dropdown-menu">
 
                                         @if($global_page_data->photo_gallery_status == 1)
@@ -222,7 +222,7 @@
                 <div class="row">
                     <div class="col-md-3">
                         <div class="item">
-                            <h2 class="heading">Site Links</h2>
+                            <h2 class="heading">Tautan Situs</h2>
                             <ul class="useful-links">
 
                                 @if($global_page_data->photo_gallery_status == 1)
@@ -245,9 +245,9 @@
                     </div>
                     <div class="col-md-3">
                         <div class="item">
-                            <h2 class="heading">Useful Links</h2>
+                            <h2 class="heading">Tautan Berguna</h2>
                             <ul class="useful-links">
-                                <li><a href="{{ route('home') }}">Home</a></li>
+                                <li><a href="{{ route('home') }}">Beranda</a></li>
 
                                 @if($global_page_data->terms_status == 1)
                                 <li><a href="{{ route('terms') }}">{{ $global_page_data->terms_heading }}</a></li>
@@ -267,7 +267,7 @@
                     
                     <div class="col-md-3">
                         <div class="item">
-                            <h2 class="heading">Contact</h2>
+                            <h2 class="heading">Kontak</h2>
                             <div class="list-item">
                                 <div class="left">
                                     <i class="fa fa-map-marker"></i>
@@ -316,9 +316,9 @@
 
                     <div class="col-md-3">
                         <div class="item">
-                            <h2 class="heading">Newsletter</h2>
+                            <h2 class="heading">Berita</h2>
                             <p>
-                                In order to get the latest news and other great items, please subscribe us here: 
+                            Untuk mendapatkan berita terbaru dan barang-barang hebat lainnya, silakan berlangganan kepada kami di sini: 
                             </p>
                             <form action="{{ route('subscriber_send_email') }}" method="post" class="form_subscribe_ajax">
                                 @csrf
@@ -327,7 +327,7 @@
                                     <span class="text-danger error-text email_error"></span>
                                 </div>
                                 <div class="form-group">
-                                    <input type="submit" class="btn btn-primary" value="Subscribe Now">
+                                    <input type="submit" class="btn btn-primary" value="Langganan sekarang">
                                 </div>
                             </form>
                         </div>

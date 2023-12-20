@@ -6,12 +6,17 @@
                     <li><a href="#" data-toggle="search" class="nav-link nav-link-lg d-sm-none"><i class="fas fa-search"></i></a></li>
                 </ul>
             </form>
-            <ul class="navbar-nav navbar-right">
+            <ul class="navbar-nav navbar-right btn-block justify-content-end">
                 <li class="nav-link">
-                    <a href="{{ route('home') }}" class="btn btn-warning">Front End</a>
+                    <a href="{{ route('home') }}" class="btn btn-warning">Beranda</a>
                 </li>
+<<<<<<< HEAD
                 <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
                     
+=======
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+>>>>>>> e195b49de2c2ed0ace7a42a67dbb679f540e4a26
                     @if(Auth::guard('customer')->user()->photo == '')
                     <img alt="image" src="{{ asset('uploads/default.png') }}" class="rounded-circle mr-1">
                     @else
@@ -21,10 +26,10 @@
                     <div class="d-sm-none d-lg-inline-block">{{ Auth::guard('customer')->user()->name }}</div></a>
                     <div class="dropdown-menu dropdown-menu-right">
                         <a href="{{ route('customer_profile') }}" class="dropdown-item has-icon">
-                            <i class="fa fa-user"></i> Edit Profile
+                            <i class="fa fa-user"></i> Pengaturan Profil
                         </a>
                         <a href="{{ route('customer_logout') }}" class="dropdown-item has-icon text-danger">
-                            <i class="fa fa-sign-out"></i> Logout
+                            <i class="fa fa-sign-out"></i> Keluar
                         </a>
                     </div>
                 </li>

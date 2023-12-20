@@ -25,12 +25,12 @@
                             <tr>
                                 <th></th>
                                 <th>Serial</th>
-                                <th>Photo</th>
-                                <th>Room Info</th>
-                                <th>Price/Night</th>
-                                <th>Checkin</th>
-                                <th>Checkout</th>
-                                <th>Guests</th>
+                                <th>Foto</th>
+                                <th>Info Kamar</th>
+                                <th>Harga/Malam</th>
+                                <th>Check-in</th>
+                                <th>Check-out</th>
+                                <th>Tamu</th>
                                 <th>Subtotal</th>
                             </tr>
                         </thead>
