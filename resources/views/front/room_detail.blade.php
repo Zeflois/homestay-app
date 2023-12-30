@@ -16,18 +16,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-7 col-sm-12 left">
-
-                <div class="room-detail-carousel owl-carousel">
-                    <div class="item" style="background-image:url({{ asset('uploads/'.$single_room_data->featured_photo) }});background-size: 100% 100%; background-position: center;">
-                        <div class="bg"></div>
-                    </div>
-                    
-                    @foreach($single_room_data->rRoomPhoto as $item)
-                    <div class="item" style="background-image:url({{ asset('uploads/'.$item->photo) }});background-size: 100% 100%; background-position: center;">
-                        <div class="bg"></div>
-                    </div>
-                    @endforeach
-
+                <div>
+                    <iframe width="600" height="400" allowfullscreen style="border-style:none;" src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.ibb.co/pn7tmbz/PANO-20230810-174638-0.jpg"></iframe>
                 </div>
                 
                 <div class="description">

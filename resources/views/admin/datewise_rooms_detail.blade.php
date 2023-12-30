@@ -16,11 +16,11 @@
                         <table class="table table-bordered" id="">
                             <thead>
                                 <tr>
-                                    <th>SL</th>
-                                    <th>Room Name</th>
-                                    <th>Total Rooms</th>
-                                    <th>Booked Rooms</th>
-                                    <th>Available Rooms</th>
+                                    <th>Nomor</th>
+                                    <th>Tipe Kamar</th>
+                                    <th>Total Kamar</th>
+                                    <th>Kamar Terisi</th>
+                                    <th>Kamar Kosong</th>
                                 </tr>
                             </thead>
                             <tbody>

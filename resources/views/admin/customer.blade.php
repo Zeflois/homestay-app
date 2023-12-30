@@ -12,12 +12,12 @@
                         <table class="table table-bordered" id="example1">
                             <thead>
                                 <tr>
-                                    <th>SL</th>
-                                    <th>Photo</th>
-                                    <th>Name</th>
+                                    <th>Nomor</th>
+                                    <th>Foto</th>
+                                    <th>Nama</th>
                                     <th>Email</th>
-                                    <th>Phone</th>
-                                    <th>Action</th>
+                                    <th>No Telepon</th>
+                                    <th>Tindakan</th>
                                 </tr>
                             </thead>
                             <tbody>

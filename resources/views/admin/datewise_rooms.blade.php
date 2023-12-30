@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Select Date *</label>
+                                    <label class="form-label">Pilih Tanggal *</label>
                                     <input type="text" class="form-control datepicker" name="selected_date">
                                 </div>
                                 <div class="mb-4">

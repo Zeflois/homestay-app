@@ -17,29 +17,29 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Photo *</label>
+                                    <label class="form-label">Foto *</label>
                                     <div>
                                         <input type="file" name="featured_photo">
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Name *</label>
+                                    <label class="form-label">Nama *</label>
                                     <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Description *</label>
+                                    <label class="form-label">Deskripsi *</label>
                                     <textarea name="description" class="form-control snote" cols="30" rows="10">{{ old('description') }}</textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Price *</label>
+                                    <label class="form-label">Harga *</label>
                                     <input type="text" class="form-control" name="price" value="{{ old('price') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Total Rooms *</label>
+                                    <label class="form-label">Total Kamar *</label>
                                     <input type="text" class="form-control" name="total_rooms" value="{{ old('total_rooms') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Amenities</label>
+                                    <label class="form-label">Fasilitas</label>
                                     @php $i=0; @endphp
                                     @foreach($all_amenities as $item)
                                     @php $i++; @endphp
