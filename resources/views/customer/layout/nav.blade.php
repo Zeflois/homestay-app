@@ -10,8 +10,13 @@
                 <li class="nav-link">
                     <a href="{{ route('home') }}" class="btn btn-warning">Beranda</a>
                 </li>
+<<<<<<< HEAD
+                <li class="dropdown"><a href="#" data-toggle="dropdown" class="nav-link dropdown-toggle nav-link-lg nav-link-user">
+                    
+=======
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+>>>>>>> e195b49de2c2ed0ace7a42a67dbb679f540e4a26
                     @if(Auth::guard('customer')->user()->photo == '')
                     <img alt="image" src="{{ asset('uploads/default.png') }}" class="rounded-circle mr-1">
                     @else
