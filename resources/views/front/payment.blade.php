@@ -71,6 +71,7 @@
                     <option value="">Select Payment Method</option>
                     <option value="PayPal">PayPal</option>
                     <option value="Stripe">Stripe</option>
+                    <option value="Midtrans">Midtrans</option>
                 </select>
 
                 <div class="paypal mt_20" id="paypalContainer" style="display: none;">
@@ -82,7 +83,18 @@
                     </form>
                 </div>
 
-                <div class="stripe mt_20">
+                <div class="paypal mt_20" id="midtransButton" style="display: none;">
+                    <h4>Pay with Midtrans</h4>
+                    <form method="POST" id="payment-form" action="{{route('midtransAction')}}">
+                        <input type="hidden" name="_token" id="_token" value="{!! csrf_token() !!}">
+                            <input type="hidden" name="result_type" id="result-type" value="">
+                            <input type="hidden" name="result_data" id="result-data" value="">
+                        <!-- Add other form fields and PayPal-related inputs here -->
+                         <button class="btn btn-primary" id="pay-button"><i class="fa fa-usd" aria-hidden="true"></i> Pay</button>
+                        </form>
+                </div>
+
+                <div class="stripe mt_20" id="stripePayment"  style="display: none;">
                     <h4>Pay with Stripe</h4>
                     @php
                     $cents = $total_price*100;
@@ -109,13 +121,13 @@
             <div class="col-lg-4 col-md-4 checkout-right">
                 <div class="inner">
                     <h4 class="mb_10">Billing Details</h4>
-                    <div>
+                    <div id="billing_name">
                         Name: {{ session()->get('billing_name') }}
                     </div>
-                    <div>
+                    <div id="billing_email">
                         Email: {{ session()->get('billing_email') }}
                     </div>
-                    <div>
+                    <div id="billing_phone">
                         Phone: {{ session()->get('billing_phone') }}
                     </div>
                     <div>
@@ -133,6 +145,7 @@
                     <div>
                         Zip: {{ session()->get('billing_zip') }}
                     </div>
+                    
                 </div>
             </div>
             <div class="col-lg-4 col-md-4 checkout-right">
@@ -146,6 +159,7 @@
                                 $i=0;
                                 foreach(session()->get('cart_room_id') as $value) {
                                     $arr_cart_room_id[$i] = $value;
+                                    
                                     $i++;
                                 }
 
@@ -184,7 +198,7 @@
                                     @endphp
 
                                     <tr>
-                                        <td>
+                                        <td id="detailsCheckout">
                                             {{ $room_data->name }}
                                             <br>
                                             ({{ $arr_cart_checkin_date[$i] }} - {{ $arr_cart_checkout_date[$i] }})
@@ -210,7 +224,7 @@
                                 @endphp                                
                                 <tr>
                                     <td><b>Total:</b></td>
-                                    <td class="p_price"><b>${{ $total_price }}</b></td>
+                                    <td class="p_price" id="total_price"><b>{{ $total_price }}</b></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -224,6 +238,8 @@
     // Get references to the relevant elements
     const paymentMethodDropdown = document.getElementById("paymentMethodChange");
     const paypalContainer = document.getElementById("paypalContainer");
+    const midtransButton = document.getElementById("midtransButton");
+    const stripePayment = document.getElementById("stripePayment");
 
     // Add an event listener to the dropdown
     paymentMethodDropdown.addEventListener("change", function () {
@@ -231,10 +247,79 @@
 
         // Show the PayPal container if "PayPal" is selected, otherwise hide it
         if (selectedOption === "PayPal") {
-            paypalContainer.style.display = "block";
+            $('#midtransButton').hide()
+            $('#stripePayment').hide()
+            $('#paypalContainer').show()
+
+            
+        } else if (selectedOption === "Midtrans") {
+            $('#midtransButton').show()
+            $('#stripePayment').hide()
+            $('#paypalContainer').hide()
         } else {
-            paypalContainer.style.display = "none";
+            $('#midtransButton').hide()
+            $('#stripePayment').show()
+            $('#paypalContainer').hide()
         }
     });
 </script>
+
+<script type="text/javascript" src="https://app.sandbox.midtrans.com/snap/snap.js" data-client-key="SB-Mid-client-N1_eqAQYQiqIvdpc"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $('#pay-button').click(function(event) {
+                event.preventDefault();
+                $(this).attr("disabled", "disabled");
+                // console.log($('#nilai').val().replace("Rp.", '').replace(",", '').replace(".", ''));
+                $.ajax({
+                    method: "POST",
+                    url: '/payment/midtransPayment',
+                    cache: false,
+                    data: {
+                        _token: $('#_token').val(),
+                        billing_name: $('#billing_name').text().replace("Name: ", ''),
+                        billing_phone: $('#billing_phone').text().replace("Phone: ", ''),
+                        billing_email: $('#billing_email').text().replace("Email: ", ''),
+                        detailsCheckout: $('#detailsCheckout').text(),
+                        total: $('#total_price').text(),
+                        // total: $('#total_price').val().replace("Rp.", '').replace(",", '').replace(".", ''),
+
+                    },
+                    success: function(data) {
+                        //location = data;
+                        console.log('token = ' + data);
+
+                        var resultType = document.getElementById('result-type');
+                        var resultData = document.getElementById('result-data');
+
+                        function changeResult(type, data) {
+                            $("#result-type").val(type);
+                            $("#result-data").val(JSON.stringify(data));
+                            //resultType.innerHTML = type;
+                            //resultData.innerHTML = JSON.stringify(data);
+                        }
+                        snap.pay(data, {
+
+                            onSuccess: function(result) {
+                                changeResult('success', result);
+                                console.log(result.status_message);
+                                console.log(result);
+                                $("#payment-form").submit();
+                            },
+                            onPending: function(result) {
+                                changeResult('pending', result);
+                                console.log(result.status_message);
+                                $("#payment-form").submit();
+                            },
+                            onError: function(result) {
+                                changeResult('error', result);
+                                console.log(result.status_message);
+                                $("#payment-form").submit();
+                            }
+                        });
+                    }
+                });
+            
+        });
+    </script>
 @endsection
