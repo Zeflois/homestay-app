@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Testimonials')
+@section('heading', 'Lihat Testimoni')
 
 @section('right_top_button')
-<a href="{{ route('admin_testimonial_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+<a href="{{ route('admin_testimonial_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Tambahj</a>
 @endsection
 
 @section('main_content')
@@ -17,10 +17,10 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Photo</th>
-                                    <th>Name</th>
-                                    <th>Designation</th>
-                                    <th>Action</th>
+                                    <th>Foto</th>
+                                    <th>Nama</th>
+                                    <th>Penamaan</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,8 +33,8 @@
                                     <td>{{ $row->name }}</td>
                                     <td>{{ $row->designation }}</td>
                                     <td class="pt_10 pb_10">
-                                        <a href="{{ route('admin_testimonial_edit',$row->id) }}" class="btn btn-primary">Edit</a>
-                                        <a href="{{ route('admin_testimonial_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
+                                        <a href="{{ route('admin_testimonial_edit',$row->id) }}" class="btn btn-primary">Sunting</a>
+                                        <a href="{{ route('admin_testimonial_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Apakah kamu yakin?');">Hapus</a>
                                     </td>
                                 </tr>
                                 @endforeach

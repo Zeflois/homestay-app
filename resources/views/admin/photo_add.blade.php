@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Add Photo')
+@section('heading', 'Tambah Foto')
 
 @section('right_top_button')
-<a href="{{ route('admin_photo_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_photo_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
 @endsection
 
 @section('main_content')
@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Photo *</label>
+                                    <label class="form-label">Foto *</label>
                                     <div>
                                         <input type="file" name="photo">
                                     </div>
@@ -28,7 +28,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Kirim</button>
                                 </div>
                             </div>
                         </div>

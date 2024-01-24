@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Add Room')
+@section('heading', 'Tambah Kamar')
 
 @section('right_top_button')
 <a href="{{ route('admin_room_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>

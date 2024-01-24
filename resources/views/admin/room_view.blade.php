@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Rooms')
+@section('heading', 'Lihat Kamar')
 
 @section('right_top_button')
-<a href="{{ route('admin_room_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+<a href="{{ route('admin_room_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
 @endsection
 
 @section('main_content')
@@ -40,8 +40,8 @@
 
                                         <a href="{{ route('admin_room_gallery',$row->id) }}" class="btn btn-success">Galeri</a>
 
-                                        <a href="{{ route('admin_room_edit',$row->id) }}" class="btn btn-primary">Edit</a>
-                                        <a href="{{ route('admin_room_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Hapus</a>
+                                        <a href="{{ route('admin_room_edit',$row->id) }}" class="btn btn-primary">Sunting</a>
+                                        <a href="{{ route('admin_room_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Apakah kamu yakin?');">Hapus</a>
                                     </td>
                                 </tr>
 

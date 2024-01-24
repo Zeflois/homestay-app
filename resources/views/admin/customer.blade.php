@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Customers')
+@section('heading', 'Pelanggan')
 
 @section('main_content')
 <div class="section-body">
@@ -37,9 +37,9 @@
                                     <td>{{ $row->phone }}</td>
                                     <td class="pt_10 pb_10">
                                         @if($row->status == 1)
-                                            <a href="{{ route('admin_customer_change_status',$row->id) }}" class="btn btn-success">Active</a>
+                                            <a href="{{ route('admin_customer_change_status',$row->id) }}" class="btn btn-success">Aktif</a>
                                         @else
-                                            <a href="{{ route('admin_customer_change_status',$row->id) }}" class="btn btn-danger">Pending</a>
+                                            <a href="{{ route('admin_customer_change_status',$row->id) }}" class="btn btn-danger">Tertunda</a>
                                         @endif
                                     </td>
                                 </tr>

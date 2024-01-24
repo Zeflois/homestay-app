@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Order Invoice')
+@section('heading', 'Faktur Pesanan')
 
 @section('main_content')
 <div class="section-body">
@@ -10,13 +10,13 @@
                 <div class="col-lg-12">
                     <div class="invoice-title">
                         <h2>Invoice</h2>
-                        <div class="invoice-number">Order #{{ $order->order_no }}</div>
+                        <div class="invoice-number">Pesanan #{{ $order->order_no }}</div>
                     </div>
                     <hr>
                     <div class="row">
                         <div class="col-md-6">
                             <address>
-                                <strong>Invoice To</strong><br>
+                                <strong>Faktur ke</strong><br>
                                 {{ $customer_data->name }}<br>
                                 {{ $customer_data->address }},<br>
                                 {{ $customer_data->state }}, {{ $customer_data->city }}, {{ $customer_data->zip }}
@@ -24,7 +24,7 @@
                         </div>
                         <div class="col-md-6 text-md-right">
                             <address>
-                                <strong>Invoice Date</strong><br>
+                                <strong>Tanggal Faktur</strong><br>
                                 {{ $order->booking_date }}
                             </address>
                         </div>
@@ -34,18 +34,18 @@
 
             <div class="row mt-4">
                 <div class="col-md-12">
-                    <div class="section-title">Order Summary</div>
-                    <p class="section-lead">Hotel room information are given below in detail:</p>
+                    <div class="section-title">Ringkasan Pesanan</div>
+                    <p class="section-lead">Informasi kamar hotel diberikan di bawah ini secara rinci:</p>
                     <hr class="invoice-above-table">
                     <div class="table-responsive">
                         <table class="table table-striped table-hover table-md">
                             <tr>
                                 <th>SL</th>
-                                <th>Room Name</th>
-                                <th class="text-center">Checkin Date</th>
-                                <th class="text-center">Checkout Date</th>
-                                <th class="text-center">Number of Adult</th>
-                                <th class="text-center">Number of Children</th>
+                                <th>Nama Ruangan</th>
+                                <th class="text-center">Tanggal Checkin </th>
+                                <th class="text-center">Tanggal Checkout</th>
+                                <th class="text-center">Jumlah orang dewasa</th>
+                                <th class="text-center">Jumlah anak-anak</th>
                                 <th class="text-right">Subtotal</th>
                             </tr>
                             @php $total = 0; @endphp

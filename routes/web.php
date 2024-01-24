@@ -38,7 +38,7 @@ use App\Http\Controllers\Customer\CustomerHomeController;
 use App\Http\Controllers\Customer\CustomerAuthController;
 use App\Http\Controllers\Customer\CustomerProfileController;
 use App\Http\Controllers\Customer\CustomerOrderController;
-
+use App\Http\Controllers\SnapController;
 
 /* Front */
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -62,14 +62,13 @@ Route::get('/cart/delete/{id}', [BookingController::class, 'cart_delete'])->name
 Route::get('/checkout', [BookingController::class, 'checkout'])->name('checkout');
 Route::post('/payment', [BookingController::class, 'payment'])->name('payment');
 
-<<<<<<< HEAD
 Route::get('/payment/paypal/{price}', [BookingController::class, 'paypal'])->name('paypal');
-Route::post('/payment/stripe/{price}', [BookingController::class, 'stripe'])->name('stripe');
-=======
-Route::post('/payment/paypal/{price}', [BookingController::class, 'paypal'])->name('paypal');
 Route::get('/payment/paypal/success', [BookingController::class, 'success'])->name('paypal_success');
 Route::get('/payment/paypal/cancel', [BookingController::class, 'cancel'])->name('paypal_cancel');
->>>>>>> e195b49de2c2ed0ace7a42a67dbb679f540e4a26
+Route::post('/payment/stripe/{price}', [BookingController::class, 'stripe'])->name('stripe');
+Route::post('/payment/midtransAction', [BookingController::class, 'midtransAction'])->name('midtransAction');
+Route::post('/payment/midtransPayment', [SnapController::class, 'token'])->name('midtransPayment');
+
 
 
 /* Admin */

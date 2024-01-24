@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Posts')
+@section('heading', 'Lihat Postingan')
 
 @section('right_top_button')
-<a href="{{ route('admin_post_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+<a href="{{ route('admin_post_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
 @endsection
 
 @section('main_content')
@@ -31,8 +31,8 @@
                                     </td>
                                     <td>{{ $row->heading }}</td>
                                     <td class="pt_10 pb_10">
-                                        <a href="{{ route('admin_post_edit',$row->id) }}" class="btn btn-primary">Edit</a>
-                                        <a href="{{ route('admin_post_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
+                                        <a href="{{ route('admin_post_edit',$row->id) }}" class="btn btn-primary">Sunting</a>
+                                        <a href="{{ route('admin_post_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Apakah kamu yakin?');">Hapus</a>
                                     </td>
                                 </tr>
                                 @endforeach

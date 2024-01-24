@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Subscribers')
+@section('heading', 'Lihat subscriber')
 
 @section('main_content')
 <div class="section-body">

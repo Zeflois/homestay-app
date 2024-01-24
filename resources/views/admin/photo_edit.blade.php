@@ -3,7 +3,7 @@
 @section('heading', 'Edit Photo')
 
 @section('right_top_button')
-<a href="{{ route('admin_photo_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_photo_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
 @endsection
 
 @section('main_content')
