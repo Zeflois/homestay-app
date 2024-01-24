@@ -193,8 +193,9 @@ class BookingController extends Controller
             "purchase_units" => [
                 [
                     "amount" => [
-                        "currency_code" => "IDR",
-                        "value" => $final_price
+
+                     "currency_code" => "IDR",
+                      "value" => $final_price
                     ]
                 ]
             ]
