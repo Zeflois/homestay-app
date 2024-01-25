@@ -183,6 +183,7 @@ class BookingController extends Controller
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $paypalToken = $provider->getAccessToken();
+        $final_price = $final_price;
 
         $response = $provider->createOrder([
             "intent" => "CAPTURE",
@@ -194,7 +195,7 @@ class BookingController extends Controller
                 [
                     "amount" => [
 
-                     "currency_code" => "IDR",
+                     "currency_code" => "USD",
                       "value" => $final_price
                     ]
                 ]

@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Photos')
+@section('heading', 'Lihat Foto')
 
 @section('right_top_button')
 <a href="{{ route('admin_photo_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>

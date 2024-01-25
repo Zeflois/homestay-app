@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Pesanan Pelanggan')
+@section('heading', 'Daftar Pesanan')
 
 @section('main_content')
 <div class="section-body">

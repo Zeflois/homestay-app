@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Kirim Email ke Subscriber')
+@section('heading', 'Kirim Email')
 
 @section('main_content')
 <div class="section-body">

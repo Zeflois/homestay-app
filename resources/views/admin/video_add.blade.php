@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Tambah')
+@section('heading', 'Tambah Vidio')
 
 @section('right_top_button')
 <a href="{{ route('admin_video_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>

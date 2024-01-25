@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Sunting Testimonial')
+@section('heading', 'Sunting Testimoni')
 
 @section('right_top_button')
 <a href="{{ route('admin_testimonial_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i>Lihat Semua</a>
@@ -23,7 +23,7 @@
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Ubah Photo</label>
+                                    <label class="form-label">Ubah Foto</label>
                                     <div>
                                         <input type="file" name="photo">
                                     </div>

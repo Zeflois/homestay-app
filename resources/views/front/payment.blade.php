@@ -76,7 +76,7 @@
 
                 <div class="paypal mt_20" id="paypalContainer" style="display: none;">
                     <h4>Pay with PayPal</h4>
-                    <form method="GET" action="{{route('paypal',$total_price)}}">
+                    <form method="POST" action="{{route('paypal',$total_price)}}">
                         @csrf
                         <!-- Add other form fields and PayPal-related inputs here -->
                          <button class="btn btn-primary" type="submit"><i class="fa fa-paypal" aria-hidden="true"></i> Paypal</button>

@@ -3,7 +3,7 @@
 @section('heading', 'Lihat Testimoni')
 
 @section('right_top_button')
-<a href="{{ route('admin_testimonial_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Tambahj</a>
+<a href="{{ route('admin_testimonial_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i>Tambah</a>
 @endsection
 
 @section('main_content')

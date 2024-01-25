@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit Photo')
+@section('heading', 'Sunting Foto')
 
 @section('right_top_button')
 <a href="{{ route('admin_photo_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
@@ -17,13 +17,13 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Existing Photo</label>
+                                    <label class="form-label">Foto</label>
                                     <div>
                                         <img src="{{ asset('uploads/'.$photo_data->photo) }}" alt="" class="w_200">
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Change Photo</label>
+                                    <label class="form-label">Ubah Foto</label>
                                     <div>
                                         <input type="file" name="photo">
                                     </div>
@@ -34,7 +34,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Perbaharui</button>
                                 </div>
                             </div>
                         </div>
