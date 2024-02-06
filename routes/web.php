@@ -67,8 +67,6 @@ Route::post('/payment/stripe/{price}', [BookingController::class, 'stripe'])->na
 Route::post('/payment/midtransAction', [BookingController::class, 'midtransAction'])->name('midtransAction');
 Route::post('/payment/midtransPayment', [SnapController::class, 'token'])->name('midtransPayment');
 
-
-
 /* Admin */
 Route::get('/admin/login', [AdminLoginController::class, 'index'])->name('admin_login');
 Route::post('/admin/login-submit', [AdminLoginController::class, 'login_submit'])->name('admin_login_submit');
