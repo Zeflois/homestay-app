@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit Payment Page')
+@section('heading', 'Edit Halaman Pembayaran')
 
 @section('main_content')
 <div class="section-body">
@@ -13,7 +13,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Heading *</label>
+                                    <label class="form-label">Judul *</label>
                                     <input type="text" class="form-control" name="payment_heading" value="{{ $page_data->payment_heading }}">
                                 </div>
                                 <div class="mb-4">

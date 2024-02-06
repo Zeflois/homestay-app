@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Add Testimonial')
+@section('heading', 'Tambah Testimoni')
 
 @section('right_top_button')
-<a href="{{ route('admin_testimonial_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_testimonial_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
 @endsection
 
 @section('main_content')
@@ -17,21 +17,21 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Photo *</label>
+                                    <label class="form-label">Foto *</label>
                                     <div>
                                         <input type="file" name="photo">
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Name *</label>
+                                    <label class="form-label">Nama *</label>
                                     <input type="text" class="form-control" name="name" value="{{ old('name') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Designation *</label>
+                                    <label class="form-label">Asal *</label>
                                     <input type="text" class="form-control" name="designation" value="{{ old('designation') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Comment *</label>
+                                    <label class="form-label">Ulasan *</label>
                                     <textarea name="comment" class="form-control h_100" cols="30" rows="10">{{ old('comment') }}</textarea>
                                 </div>
                                 <div class="mb-4">

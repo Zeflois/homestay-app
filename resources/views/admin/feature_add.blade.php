@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Add Feature')
+@section('heading', 'Tambah Fasilitas Homestay')
 
 @section('right_top_button')
-<a href="{{ route('admin_feature_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_feature_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
 @endsection
 
 @section('main_content')
@@ -17,12 +17,12 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Icon *</label>
-                                    <input type="text" class="form-control" name="icon" value="{{ old('icon') }}">
+                                    <label class="form-label">Ikon *</label>
+                                    <input type="text" class="form-control" name="ikon" value="{{ old('icon') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Heading *</label>
-                                    <input type="text" class="form-control" name="heading" value="{{ old('heading') }}">
+                                    <label class="form-label">Judul *</label>
+                                    <input type="text" class="form-control" name="judul" value="{{ old('heading') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Text</label>

@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit Amenity')
+@section('heading', 'Edit Fasilitas Kamar')
 
 @section('right_top_button')
-<a href="{{ route('admin_amenity_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_amenity_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
 @endsection
 
 @section('main_content')
@@ -17,8 +17,8 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Name *</label>
-                                    <input type="text" class="form-control" name="name" value="{{ $amenity_data->name }}">
+                                    <label class="form-label">Nama *</label>
+                                    <input type="text" class="form-control" name="nama" value="{{ $amenity_data->name }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>

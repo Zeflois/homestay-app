@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit About Page')
+@section('heading', 'Edit Profil Nibenia Homestay')
 
 @section('main_content')
 <div class="section-body">
@@ -23,8 +23,8 @@
                                 <div class="mb-4">
                                     <label class="form-label">Status *</label>
                                     <select name="about_status" class="form-control">
-                                        <option value="1" @if($page_data->about_status == 1) selected @endif>Show</option>
-                                        <option value="0" @if($page_data->about_status == 0) selected @endif>Hide</option>
+                                        <option value="1" @if($page_data->about_status == 1) selected @endif>Tampilkan</option>
+                                        <option value="0" @if($page_data->about_status == 0) selected @endif>Sembunyikan</option>
                                     </select>
                                 </div>
                                 <div class="mb-4">

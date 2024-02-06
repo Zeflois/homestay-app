@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Subscribers')
+@section('heading', 'Data Subscribers')
 
 @section('main_content')
 <div class="section-body">
@@ -12,7 +12,7 @@
                         <table class="table table-bordered" id="example1">
                             <thead>
                                 <tr>
-                                    <th>SL</th>
+                                    <th>Nomor</th>
                                     <th>Email</th>
                                 </tr>
                             </thead>

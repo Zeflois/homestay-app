@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit Room')
+@section('heading', 'Edit Kamar')
 
 @section('right_top_button')
-<a href="{{ route('admin_room_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_room_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
 @endsection
 
 @section('main_content')
@@ -17,35 +17,35 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Existing Featured Photo</label>
+                                    <label class="form-label">Foto yang Ditampilkan</label>
                                     <div>
                                         <img src="{{ asset('uploads/'.$room_data->featured_photo) }}" alt="" class="w_200">
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Change Featured Photo</label>
+                                    <label class="form-label">Ganti Foto Kamar</label>
                                     <div>
                                         <input type="file" name="featured_photo">
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Name *</label>
+                                    <label class="form-label">Nama *</label>
                                     <input type="text" class="form-control" name="name" value="{{ $room_data->name }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Description *</label>
+                                    <label class="form-label">Deskripsi *</label>
                                     <textarea name="description" class="form-control snote" cols="30" rows="10">{{ $room_data->description }}</textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Price *</label>
+                                    <label class="form-label">Harga *</label>
                                     <input type="text" class="form-control" name="price" value="{{ $room_data->price }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Total Rooms *</label>
+                                    <label class="form-label">Total Kamar *</label>
                                     <input type="text" class="form-control" name="total_rooms" value="{{ $room_data->total_rooms }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Amenities</label>
+                                    <label class="form-label">Kelengkapan</label>
                                     @php $i=0; @endphp
                                     @foreach($all_amenities as $item)
 
@@ -65,33 +65,33 @@
                                     @endforeach
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Room Size</label>
+                                    <label class="form-label">Ukuran Kamar</label>
                                     <input type="text" class="form-control" name="size" value="{{ $room_data->size }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Beds</label>
+                                    <label class="form-label">Ranjang</label>
                                     <input type="text" class="form-control" name="total_beds" value="{{ $room_data->total_beds }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Bathrooms</label>
+                                    <label class="form-label">Kamar Mandi</label>
                                     <input type="text" class="form-control" name="total_bathrooms" value="{{ $room_data->total_bathrooms }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Balconies</label>
+                                    <label class="form-label">Balkoni</label>
                                     <input type="text" class="form-control" name="total_balconies" value="{{ $room_data->total_balconies }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Guests</label>
+                                    <label class="form-label">Jumlah Tamu</label>
                                     <input type="text" class="form-control" name="total_guests" value="{{ $room_data->total_guests }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Video Preview</label>
+                                    <label class="form-label">Vidio Preview</label>
                                     <div class="iframe-container1">
                                         <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $room_data->video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Video Id</label>
+                                    <label class="form-label">Vidio Id</label>
                                     <input type="text" class="form-control" name="video_id" value="{{ $room_data->video_id }}">
                                 </div>
                                 <div class="mb-4">

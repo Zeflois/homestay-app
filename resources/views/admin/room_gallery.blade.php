@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Room Gallery of '.$room_data->name)
+@section('heading', 'Galeri Foto '.$room_data->name)
 
 @section('right_top_button')
-<a href="{{ route('admin_room_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Back to previous</a>
+<a href="{{ route('admin_room_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Kembali Menu Sebelumnya</a>
 @endsection
 
 @section('main_content')
@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Photo *</label>
+                                    <label class="form-label">Foto *</label>
                                     <div>
                                         <input type="file" name="photo">
                                     </div>
@@ -45,9 +45,9 @@
                         <table class="table table-bordered" id="example1">
                             <thead>
                                 <tr>
-                                    <th>SL</th>
-                                    <th>Photo</th>
-                                    <th>Action</th>
+                                    <th>Nomor</th>
+                                    <th>Foto</th>
+                                    <th>Tindakan</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -58,7 +58,7 @@
                                         <img src="{{ asset('uploads/'.$row->photo) }}" alt="" class="w_200">
                                     </td>
                                     <td class="pt_10 pb_10">
-                                        <a href="{{ route('admin_room_gallery_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
+                                        <a href="{{ route('admin_room_gallery_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Hapus</a>
                                     </td>
                                 </tr>
                                 @endforeach

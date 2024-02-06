@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Add Video')
+@section('heading', 'Halaman Tambah Vidio')
 
 @section('right_top_button')
-<a href="{{ route('admin_video_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_video_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
 @endsection
 
 @section('main_content')
@@ -21,7 +21,7 @@
                                     <input type="text" class="form-control" name="video_id" value="{{ old('video_id') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Caption</label>
+                                    <label class="form-label">Keterangan</label>
                                     <input type="text" class="form-control" name="caption" value="{{ old('caption') }}">
                                 </div>
                                 <div class="mb-4">

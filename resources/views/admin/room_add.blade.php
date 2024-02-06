@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Add Room')
+@section('heading', 'Tambah Tipe Kamar')
 
 @section('right_top_button')
-<a href="{{ route('admin_room_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_room_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
 @endsection
 
 @section('main_content')
@@ -52,27 +52,27 @@
                                     @endforeach
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Room Size</label>
+                                    <label class="form-label">Ukuran Kamar</label>
                                     <input type="text" class="form-control" name="size" value="{{ old('size') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Beds</label>
+                                    <label class="form-label">Ranjang</label>
                                     <input type="text" class="form-control" name="total_beds" value="{{ old('total_beds') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Bathrooms</label>
+                                    <label class="form-label">Kamar Mandi</label>
                                     <input type="text" class="form-control" name="total_bathrooms" value="{{ old('total_bathrooms') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Balconies</label>
+                                    <label class="form-label">Balkon</label>
                                     <input type="text" class="form-control" name="total_balconies" value="{{ old('total_balconies') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Guests</label>
+                                    <label class="form-label">Jumlah Tamu</label>
                                     <input type="text" class="form-control" name="total_guests" value="{{ old('total_guests') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Video Id</label>
+                                    <label class="form-label">Vidio Id</label>
                                     <input type="text" class="form-control" name="video_id" value="{{ old('video_id') }}">
                                 </div>
                                 <div class="mb-4">

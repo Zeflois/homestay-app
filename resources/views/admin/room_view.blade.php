@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Rooms')
+@section('heading', 'Jenis Kamar')
 
 @section('right_top_button')
-<a href="{{ route('admin_room_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+<a href="{{ route('admin_room_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah Baru</a>
 @endsection
 
 @section('main_content')
@@ -119,8 +119,14 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                                        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+                                        <!-- Include DataTables and its dependencies -->
+                                        <script src="https://cdn.datatables.net/1.11.6/js/jquery.dataTables.min.js"></script>
+                                        <script src="https://cdn.datatables.net/1.11.6/js/dataTables.bootstrap5.min.js"></script>
                                     </div>
-                                </div>
+                                    </div>
 
 
                                 @endforeach

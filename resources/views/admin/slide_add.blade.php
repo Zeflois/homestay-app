@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Add Slide')
+@section('heading', 'Tambah Slide')
 
 @section('right_top_button')
-<a href="{{ route('admin_slide_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_slide_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
 @endsection
 
 @section('main_content')
@@ -17,17 +17,17 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Photo *</label>
+                                    <label class="form-label">Foto *</label>
                                     <div>
                                         <input type="file" name="photo">
                                     </div>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Heading</label>
+                                    <label class="form-label">Judul</label>
                                     <input type="text" class="form-control" name="heading" value="{{ old('heading') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Text</label>
+                                    <label class="form-label">Teks</label>
                                     <textarea name="text" class="form-control h_100" cols="30" rows="10">{{ old('text') }}</textarea>
                                 </div>
                                 <div class="mb-4">
