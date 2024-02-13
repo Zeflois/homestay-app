@@ -1,10 +1,16 @@
 @extends('admin.layout.app')
 
 @section('heading', 'Lihat Kamar')
+<!-- Add these lines in the <head> section of your HTML document -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 @section('right_top_button')
 <a href="{{ route('admin_room_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
 @endsection
+
 
 @section('main_content')
 <div class="section-body">
@@ -33,7 +39,7 @@
                                         <img src="{{ asset('uploads/'.$row->featured_photo) }}" alt="" class="w_200">
                                     </td>
                                     <td>{{ $row->name }}</td>
-                                    <td>${{ $row->price }}</td>
+                                    <td>Rp {{ $row->price }}</td>
                                     <td class="pt_10 pb_10">
                                         
                                         <button class="btn btn-warning" data-toggle="modal" data-target="#exampleModal{{ $i }}">Detail</button>
@@ -121,8 +127,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
                                 @endforeach
                             </tbody>
                         </table>
@@ -132,4 +136,5 @@
         </div>
     </div>
 </div>
+
 @endsection

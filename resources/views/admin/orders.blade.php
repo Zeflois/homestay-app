@@ -27,7 +27,11 @@
                                     <td>{{ $row->order_no }}</td>
                                     <td>{{ $row->payment_method }}</td>
                                     <td>{{ $row->booking_date }}</td>
-                                    <td>{{ $row->paid_amount }}</td>
+                                    @if($row->payment_method == "Midtrans")
+                                    <td>Rp {{ $row->paid_amount }}</td>
+                                    @else
+                                    <td>$ {{ $row->paid_amount }}</td>
+                                    @endif
                                     <td class="pt_10 pb_10">
                                         <a href="{{ route('admin_invoice',$row->id) }}" class="btn btn-primary">Detail</a>
                                         <a href="{{ route('admin_order_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Hapus</a>

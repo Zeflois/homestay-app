@@ -46,12 +46,12 @@
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
-                            <input type="number" name="adult" class="form-control" min="1" max="30" placeholder="Dewasa">
+                            <input type="number" name="adult" class="form-control" min="1" max="30" placeholder="Dewasa" value="1">
                         </div>
                     </div>
                     <div class="col-lg-2">
                         <div class="form-group">
-                            <input type="number" name="children" class="form-control" min="0" max="30" placeholder="Anak-anak">
+                            <input type="number" name="children" class="form-control" min="0" max="30" placeholder="Anak-anak" value="0">
                         </div>
                     </div>
                     <div class="col-lg-2">
@@ -112,7 +112,7 @@
                     <div class="text">
                         <h2><a href="{{ route('room_detail',$item->id) }}">{{ $item->name }}</a></h2>
                         <div class="price">
-                            ${{ $item->price }}/malam
+                            Rp {{ $item->price }}/malam
                         </div>
                         <div class="button">
                             <a href="{{ route('room_detail',$item->id) }}" class="btn btn-primary">Lihat Selengkapnya</a>
