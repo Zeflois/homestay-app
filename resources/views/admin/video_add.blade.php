@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Video ID *</label>
+                                    <label class="form-label">ID vidio *</label>
                                     <input type="text" class="form-control" name="video_id" value="{{ old('video_id') }}">
                                 </div>
                                 <div class="mb-4">
@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Kirim</button>
                                 </div>
                             </div>
                         </div>

@@ -41,13 +41,13 @@
                                     </div>
                                     <div class="form-group">
                                         <button type="submit" class="btn btn-primary btn-lg btn-block">
-                                            Send Password Reset Link
+                                            Mengirim Link Reset Password
                                         </button>
                                     </div>
                                     <div class="form-group">
                                         <div>
                                             <a href="{{ route('admin_login') }}">
-                                                Back to login page
+                                                Kembali ke halaman login
                                             </a>
                                         </div>
                                     </div>

@@ -66,16 +66,16 @@
                 }
                 @endphp
                         
-                <h4>Make Payment</h4>
+                <h4>Metode Pembayaran</h4>
                 <select name="payment_method" class="form-control select2" id="paymentMethodChange" autocomplete="off">
-                    <option value="">Select Payment Method</option>
+                    <option value="">Pilih Metode Pembayaran</option>
                     <option value="PayPal">PayPal</option>
                     <option value="Stripe">Stripe</option>
                     <option value="Midtrans">Midtrans</option>
                 </select>
 
                 <div class="paypal mt_20" id="paypalContainer" style="display: none;">
-                    <h4>Pay with PayPal</h4>
+                    <h4>Bayar dengan PayPal</h4>
                     <form method="POST" action="{{route('paypal',$total_price)}}">
                         @csrf
                         <!-- Add other form fields and PayPal-related inputs here -->
@@ -84,7 +84,7 @@
                 </div>
 
                 <div class="paypal mt_20" id="midtransButton" style="display: none;">
-                    <h4>Pay with Midtrans</h4>
+                    <h4>Bayar dengan Midtrans</h4>
                     <form method="POST" id="payment-form" action="{{route('midtransAction')}}">
                         <input type="hidden" name="_token" id="_token" value="{!! csrf_token() !!}">
                             <input type="hidden" name="result_type" id="result-type" value="">
@@ -120,7 +120,7 @@
             </div>
             <div class="col-lg-4 col-md-4 checkout-right">
                 <div class="inner">
-                    <h4 class="mb_10">Billing Details</h4>
+                    <h4 class="mb_10">Rincian Tagihan</h4>
                     <div id="billing_name">
                         Name: {{ session()->get('billing_name') }}
                     </div>
@@ -150,7 +150,7 @@
             </div>
             <div class="col-lg-4 col-md-4 checkout-right">
                 <div class="inner">
-                    <h4 class="mb_10">Cart Details</h4>
+                    <h4 class="mb_10">Rincian Pesanan</h4>
                     <div class="table-responsive">
                         <table class="table">
                             <tbody>

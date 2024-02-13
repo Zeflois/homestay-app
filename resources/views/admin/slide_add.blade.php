@@ -31,16 +31,16 @@
                                     <textarea name="text" class="form-control h_100" cols="30" rows="10">{{ old('text') }}</textarea>
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Button Text</label>
+                                    <label class="form-label">Teks Tombol</label>
                                     <input type="text" class="form-control" name="button_text" value="{{ old('button_text') }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Button URL</label>
+                                    <label class="form-label">URL Tombol</label>
                                     <input type="text" class="form-control" name="button_url" value="{{ old('button_url') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Submit</button>
+                                    <button type="submit" class="btn btn-primary">Kirim</button>
                                 </div>
                             </div>
                         </div>

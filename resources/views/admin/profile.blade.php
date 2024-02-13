@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit Profile')
+@section('heading', 'Sunting Profil')
 
 @section('main_content')
 <div class="section-body">
@@ -17,7 +17,7 @@
                             </div>
                             <div class="col-md-9">
                                 <div class="mb-4">
-                                    <label class="form-label">Name *</label>
+                                    <label class="form-label">Nama *</label>
                                     <input type="text" class="form-control" name="name" value="{{ Auth::guard('admin')->user()->name }}">
                                 </div>
                                 <div class="mb-4">
@@ -29,12 +29,12 @@
                                     <input type="password" class="form-control" name="password">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Retype Password</label>
+                                    <label class="form-label">Tulis ulang Password</label>
                                     <input type="password" class="form-control" name="retype_password">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Perbaharui</button>
                                 </div>
                             </div>
                         </div>

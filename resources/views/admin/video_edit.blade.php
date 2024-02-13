@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit Video')
+@section('heading', 'Sunting Vidio')
 
 @section('right_top_button')
 <a href="{{ route('admin_video_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Perbaharui</button>
                                 </div>
                             </div>
                         </div>

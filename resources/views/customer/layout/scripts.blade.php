@@ -16,3 +16,4 @@
 <script src="{{ asset('dist/js/iziToast.min.js') }}"></script>
 <script src="{{ asset('dist/js/fontawesome-iconpicker.js') }}"></script>
 <script src="{{ asset('dist/js/bootstrap4-toggle.min.js') }}"></script>
+<script src="https://kit.fontawesome.com/4a31d876f2.js" crossorigin="anonymous"></script>

@@ -26,7 +26,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Perbaharui</button>
                                 </div>
                             </div>
                         </div>

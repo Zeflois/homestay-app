@@ -3,7 +3,7 @@
 @section('heading', 'Rooms (Booked and Available) for '.$selected_date)
 
 @section('right_top_button')
-<a href="{{ route('admin_datewise_rooms') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Back to previous</a>
+<a href="{{ route('admin_datewise_rooms') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Kembali</a>
 @endsection
 
 @section('main_content')

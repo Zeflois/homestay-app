@@ -31,12 +31,12 @@
                                     <input type="text" class="form-control" name="judul" value="{{ $feature_data->heading }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Text</label>
+                                    <label class="form-label">Teks</label>
                                     <textarea name="text" class="form-control h_100" cols="30" rows="10">{{ $feature_data->text }}</textarea>
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Perbaharui</button>
                                 </div>
                             </div>
                         </div>

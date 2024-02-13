@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit Slide')
+@section('heading', 'Sunting Slide')
 
 @section('right_top_button')
 <a href="{{ route('admin_slide_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> Lihat Semua</a>
@@ -41,12 +41,12 @@
                                     <input type="text" class="form-control" name="button_text" value="{{ $slide_data->button_text }}">
                                 </div>
                                 <div class="mb-4">
-                                    <label class="form-label">Button URL</label>
+                                    <label class="form-label">URL Tombol</label>
                                     <input type="text" class="form-control" name="button_url" value="{{ $slide_data->button_url }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Perbaharui</button>
                                 </div>
                             </div>
                         </div>
