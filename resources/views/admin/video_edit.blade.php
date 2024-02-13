@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit Video')
+@section('heading', 'Sunting Vidio')
 
 @section('right_top_button')
-<a href="{{ route('admin_video_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i> View All</a>
+<a href="{{ route('admin_video_view') }}" class="btn btn-primary"><i class="fa fa-eye"></i>Lihat Semua</a>
 @endsection
 
 @section('main_content')
@@ -17,7 +17,7 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Video Preview</label>
+                                    <label class="form-label">Pratinjau Video</label>
                                     <div class="iframe-container1">
                                         <iframe width="560" height="315" src="https://www.youtube.com/embed/{{ $video_data->video_id }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                                     </div>
@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Perbaharui</button>
                                 </div>
                             </div>
                         </div>

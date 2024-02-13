@@ -1,9 +1,9 @@
 @extends('admin.layout.app')
 
-@section('heading', 'View Videos')
+@section('heading', 'Lihat Video')
 
 @section('right_top_button')
-<a href="{{ route('admin_video_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Add New</a>
+<a href="{{ route('admin_video_add') }}" class="btn btn-primary"><i class="fa fa-plus"></i> Tambah</a>
 @endsection
 
 @section('main_content')
@@ -17,9 +17,9 @@
                             <thead>
                                 <tr>
                                     <th>SL</th>
-                                    <th>Video Preview</th>
+                                    <th>Pratinjau Video</th>
                                     <th>Caption</th>
-                                    <th>Action</th>
+                                    <th>Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -33,8 +33,8 @@
                                     </td>
                                     <td>{{ $row->caption }}</td>
                                     <td class="pt_10 pb_10">
-                                        <a href="{{ route('admin_video_edit',$row->id) }}" class="btn btn-primary">Edit</a>
-                                        <a href="{{ route('admin_video_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Are you sure?');">Delete</a>
+                                        <a href="{{ route('admin_video_edit',$row->id) }}" class="btn btn-primary">Sunting</a>
+                                        <a href="{{ route('admin_video_delete',$row->id) }}" class="btn btn-danger" onClick="return confirm('Apakah kamu yakin?');">Hapus</a>
                                     </td>
                                 </tr>
                                 @endforeach

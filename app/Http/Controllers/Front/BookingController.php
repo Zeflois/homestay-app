@@ -183,6 +183,8 @@ class BookingController extends Controller
         $provider = new PayPalClient;
         $provider->setApiCredentials(config('paypal'));
         $paypalToken = $provider->getAccessToken();
+        $rupiah = floatval($final_price)/16000;
+        $final_price =  strval($rupiah);
 
         $response = $provider->createOrder([
             "intent" => "CAPTURE",
@@ -193,8 +195,9 @@ class BookingController extends Controller
             "purchase_units" => [
                 [
                     "amount" => [
-                        "currency_code" => "USD",
-                        "value" => $final_price
+
+                     "currency_code" => "USD",
+                      "value" => $final_price
                     ]
                 ]
             ]

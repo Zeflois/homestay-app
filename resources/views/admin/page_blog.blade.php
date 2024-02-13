@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Edit Blog Page')
+@section('heading', 'Perbaharui Halaman Blog')
 
 @section('main_content')
 <div class="section-body">
@@ -19,8 +19,8 @@
                                 <div class="mb-4">
                                     <label class="form-label">Status *</label>
                                     <select name="blog_status" class="form-control">
-                                        <option value="1" @if($page_data->blog_status == 1) selected @endif>Show</option>
-                                        <option value="0" @if($page_data->blog_status == 0) selected @endif>Hide</option>
+                                        <option value="1" @if($page_data->blog_status == 1) selected @endif>Tunjukan</option>
+                                        <option value="0" @if($page_data->blog_status == 0) selected @endif>Sembunyikan</option>
                                     </select>
                                 </div>
                                 <div class="mb-4">

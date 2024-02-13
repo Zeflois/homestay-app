@@ -16,8 +16,8 @@
                         <div class="d-sm-none d-lg-inline-block">{{ Auth::guard('admin')->user()->name }}</div>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ route('admin_profile') }}"><i class="fa fa-user"></i> Edit Profile</a></li>
-                        <li><a class="dropdown-item" href="{{ route('admin_logout') }}"><i class="fa fa-sign-out"></i> Logout</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin_profile') }}"><i class="fa fa-user"></i> Pengaturan Profil</a></li>
+                        <li><a class="dropdown-item" href="{{ route('admin_logout') }}"><i class="fa fa-sign-out"></i> Keluar</a></li>
                     </ul>
                 </li>
             </ul>

@@ -1,6 +1,6 @@
 @extends('admin.layout.app')
 
-@section('heading', 'Setting')
+@section('heading', 'Pengaturan')
 
 @section('main_content')
 <div class="section-body">
@@ -16,13 +16,13 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="mb-4">
-                                            <label class="form-label">Existing Logo</label>
+                                            <label class="form-label">Logo</label>
                                             <div>
                                                 <img src="{{ asset('uploads/'.$setting_data->logo) }}" alt="" class="w_200">
                                             </div>
                                         </div>
                                         <div class="mb-4">
-                                            <label class="form-label">Change Logo</label>
+                                            <label class="form-label">Ubah Logo</label>
                                             <div>
                                                 <input type="file" name="logo">
                                             </div>
@@ -30,13 +30,13 @@
                                     </div>
                                     <div class="col-md-6">
                                         <div class="mb-4">
-                                            <label class="form-label">Existing Favicon</label>
+                                            <label class="form-label">Favicon</label>
                                             <div>
                                                 <img src="{{ asset('uploads/'.$setting_data->favicon) }}" alt="" class="w_50">
                                             </div>
                                         </div>
                                         <div class="mb-4">
-                                            <label class="form-label">Change Favicon</label>
+                                            <label class="form-label">Ubah Favicon</label>
                                             <div>
                                                 <input type="file" name="favicon">
                                             </div>
@@ -55,46 +55,46 @@
 
 
                                 <div class="mb-4">
-                                    <label class="form-label">Home Feature Status</label>
+                                    <label class="form-label">Status Home Feature</label>
                                     <select name="home_feature_status" class="form-control">
-                                        <option value="Show" @if($setting_data->home_feature_status == 'Show') selected @endif>Show</option>
-                                        <option value="Hide" @if($setting_data->home_feature_status == 'Hide') selected @endif>Hide</option>
+                                        <option value="Show" @if($setting_data->home_feature_status == 'Show') selected @endif>Tunjukan</option>
+                                        <option value="Hide" @if($setting_data->home_feature_status == 'Hide') selected @endif>Sembunyikan</option>
                                     </select>
                                 </div>
 
                                 <div class="mb-4">
-                                    <label class="form-label">Home Room Total</label>
+                                    <label class="form-label">Total Home Room </label>
                                     <input type="text" class="form-control" name="home_room_total" value="{{ $setting_data->home_room_total }}">
                                 </div>
 
                                 <div class="mb-4">
-                                    <label class="form-label">Home Room Status</label>
+                                    <label class="form-label">Status Home Room</label>
                                     <select name="home_room_status" class="form-control">
-                                        <option value="Show" @if($setting_data->home_room_status == 'Show') selected @endif>Show</option>
-                                        <option value="Hide" @if($setting_data->home_room_status == 'Hide') selected @endif>Hide</option>
+                                        <option value="Show" @if($setting_data->home_room_status == 'Show') selected @endif></option>
+                                        <option value="Hide" @if($setting_data->home_room_status == 'Hide') selected @endif>Sembunyikan</option>
                                     </select>
                                 </div>
 
                                 <div class="mb-4">
-                                    <label class="form-label">Home Testimonial Status</label>
+                                    <label class="form-label">Status Home Testimonial </label>
                                     <select name="home_testimonial_status" class="form-control">
-                                        <option value="Show" @if($setting_data->home_testimonial_status == 'Show') selected @endif>Show</option>
-                                        <option value="Hide" @if($setting_data->home_testimonial_status == 'Hide') selected @endif>Hide</option>
+                                        <option value="Show" @if($setting_data->home_testimonial_status == 'Show') selected @endif>Tunjukan</option>
+                                        <option value="Hide" @if($setting_data->home_testimonial_status == 'Hide') selected @endif>Sembunyikan</option>
                                     </select>
                                 </div>
 
 
 
                                 <div class="mb-4">
-                                    <label class="form-label">Home Latest Post Total</label>
+                                    <label class="form-label">Total Home Latest Post </label>
                                     <input type="text" class="form-control" name="home_latest_post_total" value="{{ $setting_data->home_latest_post_total }}">
                                 </div>
 
                                 <div class="mb-4">
-                                    <label class="form-label">Home Latest Post Status</label>
+                                    <label class="form-label">Status Home Latest Post</label>
                                     <select name="home_latest_post_status" class="form-control">
-                                        <option value="Show" @if($setting_data->home_latest_post_status == 'Show') selected @endif>Show</option>
-                                        <option value="Hide" @if($setting_data->home_latest_post_status == 'Hide') selected @endif>Hide</option>
+                                        <option value="Show" @if($setting_data->home_latest_post_status == 'Show') selected @endif>Tunjukan</option>
+                                        <option value="Hide" @if($setting_data->home_latest_post_status == 'Hide') selected @endif>Sembunyikan</option>
                                     </select>
                                 </div>
 
@@ -144,18 +144,18 @@
                                 </div>
 
                                 <div class="mb-4">
-                                    <label class="form-label">Theme Color 1</label>
+                                    <label class="form-label">Warna Tema 1</label>
                                     <input type="text" class="form-control" name="theme_color_1" value="{{ $setting_data->theme_color_1 }}">
                                 </div>
 
                                 <div class="mb-4">
-                                    <label class="form-label">Theme Color 2</label>
+                                    <label class="form-label">Warna Tema 2</label>
                                     <input type="text" class="form-control" name="theme_color_2" value="{{ $setting_data->theme_color_2 }}">
                                 </div>
 
                                 <div class="mb-4">
                                     <label class="form-label"></label>
-                                    <button type="submit" class="btn btn-primary">Update</button>
+                                    <button type="submit" class="btn btn-primary">Perbaharui</button>
                                 </div>
                             </div>
                         </div>
