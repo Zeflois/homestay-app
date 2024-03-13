@@ -17,17 +17,9 @@
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="mb-4">
-                                    <label class="form-label">Foto yang Ditampilkan</label>
-                                    <div>
-                                        <img src="{{ asset('uploads/'.$room_data->featured_photo) }}" alt="" class="w_200">
-                                    </div>
-                                </div>
-                                <div class="mb-4">
                                     <label class="form-label">Ganti Foto Kamar</label>
-                                    <div>
-                                        <input type="file" name="featured_photo">
-                                    </div>
-                                </div>
+                                    <input type="text" class="form-control" name="featured_photo" value="{{ $room_data->featured_photo }}">
+                                    
                                 <div class="mb-4">
                                     <label class="form-label">Nama *</label>
                                     <input type="text" class="form-control" name="name" value="{{ $room_data->name }}">

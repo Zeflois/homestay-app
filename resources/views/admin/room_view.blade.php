@@ -31,7 +31,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>
-                                        <img src="{{ asset('uploads/'.$row->featured_photo) }}" alt="" class="w_200">
+                                    <iframe width="300" height="200" allowfullscreen style="border-style:none;" src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama={{ $row->featured_photo ?? 'https://i.ibb.co/s9HGQTB/kamar-keluarga-1.jpg' }}"></iframe>
                                     </td>
                                     <td>{{ $row->name }}</td>
                                     <td>Rp {{ $row->price }}</td>

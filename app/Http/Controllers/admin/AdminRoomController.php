@@ -38,19 +38,15 @@ class AdminRoomController extends Controller
         }
 
         $request->validate([
-            'featured_photo' => 'required|image|mimes:jpg,jpeg,png,gif',
+            'featured_photo' => 'required',
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
             'total_rooms' => 'required'
         ]);
 
-        $ext = $request->file('featured_photo')->extension();
-        $final_name = time().'.'.$ext;
-        $request->file('featured_photo')->move('uploads/',$final_name);
-
         $obj = new Room();
-        $obj->featured_photo = $final_name;
+        $obj->featured_photo = $request->featured_photo;
         $obj->name = $request->name;
         $obj->description = $request->description;
         $obj->price = $request->price;
@@ -101,21 +97,12 @@ class AdminRoomController extends Controller
             'name' => 'required',
             'description' => 'required',
             'price' => 'required',
-            'total_rooms' => 'required'
+            'total_rooms' => 'required',
+            'featured_photo' => 'required'
         ]);
 
-        if($request->hasFile('featured_photo')) {
-            $request->validate([
-                'featured_photo' => 'image|mimes:jpg,jpeg,png,gif'
-            ]);
-            unlink('uploads/'.$obj->featured_photo);
-            $ext = $request->file('featured_photo')->extension();
-            $final_name = time().'.'.$ext;
-            $request->file('featured_photo')->move('uploads/',$final_name);
-            $obj->featured_photo = $final_name;
-        }
-
         $obj->name = $request->name;
+        $obj->featured_photo = $request->featured_photo;
         $obj->description = $request->description;
         $obj->price = $request->price;
         $obj->total_rooms = $request->total_rooms;

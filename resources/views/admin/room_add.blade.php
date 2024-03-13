@@ -18,9 +18,7 @@
                             <div class="col-md-12">
                                 <div class="mb-4">
                                     <label class="form-label">Foto *</label>
-                                    <div>
-                                        <input type="file" name="featured_photo">
-                                    </div>
+                                    <input type="text" class="form-control" name="featured_photo" value="{{ old('featured_photo') }}">
                                 </div>
                                 <div class="mb-4">
                                     <label class="form-label">Nama *</label>

@@ -19,6 +19,7 @@ return new class extends Migration
             $table->text('description');
             $table->text('price');
             $table->text('total_rooms');
+            $table->text('picture_url')->default('https://i.ibb.co/s9HGQTB/kamar-keluarga-1.jpg');
             $table->text('amenities')->nullable();
             $table->text('size')->nullable();
             $table->text('total_beds')->nullable();

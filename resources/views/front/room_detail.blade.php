@@ -17,7 +17,7 @@
         <div class="row">
             <div class="col-lg-8 col-md-7 col-sm-12 left">
                 <div>
-                    <iframe width="600" height="400" allowfullscreen style="border-style:none;" src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama=https://i.ibb.co/pn7tmbz/PANO-20230810-174638-0.jpg"></iframe>
+                    <iframe width="600" height="400" allowfullscreen style="border-style:none;" src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama={{$single_room_data->featured_photo ?? 'https://i.ibb.co/pn7tmbz/PANO-20230810-174638-0.jpg'}}"></iframe>
                 </div>
                 
                 <div class="description">

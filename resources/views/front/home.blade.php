@@ -4,7 +4,7 @@
 <div class="slider">
     <div class="slide-carousel owl-carousel">
         @foreach($slide_all as $item)
-        <div class="item" style="background-image:url({{ asset('uploads/'.$item->photo) }});">
+        <div class="item" style="background-image:url({{ asset('uploads/'.$item->photo) }});background-size: 100% 100%;">
             <div class="bg"></div>
             <div class="text">
                 <h2>{{ $item->heading }}</h2>
@@ -100,6 +100,7 @@
             </div>
         </div>
         <div class="row">
+        <div class="row justify-content-center">
             @foreach($room_all as $item)
             @if($loop->iteration>$global_setting_data->home_room_total) 
             @break
@@ -107,7 +108,7 @@
             <div class="col-md-3">
                 <div class="inner">
                     <div class="photo">
-                        <img src="{{ asset('uploads/'.$item->featured_photo) }}" alt="">
+                        <iframe width="300" height="200" allowfullscreen style="border-style:none;" src="https://cdn.pannellum.org/2.5/pannellum.htm#panorama={{$item->featured_photo ?? 'https://i.ibb.co/pn7tmbz/PANO-20230810-174638-0.jpg'}}"></iframe>
                     </div>
                     <div class="text">
                         <h2><a href="{{ route('room_detail',$item->id) }}">{{ $item->name }}</a></h2>
@@ -121,6 +122,7 @@
                 </div>
             </div>
             @endforeach
+            </div>  
         </div>
         <div class="row">
             <div class="col-md-12">

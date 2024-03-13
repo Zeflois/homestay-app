@@ -161,7 +161,7 @@
                                 @endif
 
                                 <li class="nav-item">
-                                    <a href="javascript:void;" class="nav-link dropdown-toggle">Room & Suite</a>
+                                    <a href="javascript:void;" class="nav-link dropdown-toggle">Tipe Kamar</a>
                                     <ul class="dropdown-menu">
                                         @foreach($global_room_data as $item)
                                         <li class="nav-item">
